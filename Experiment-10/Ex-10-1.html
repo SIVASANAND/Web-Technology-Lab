@@ -3,208 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ex 10 - Node.js and MongoDB (Code and Output)</title>
+  <title>Exercise 1: User Registration with Node.js and MongoDB</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    pre { background: #f3f4f6; border: 1px solid #ccc; padding: 10px; overflow-x: auto; font-size: 13px; }
-    .out { border: 1px solid #999; padding: 10px; margin-bottom: 20px; color: blue; font-family: "Times New Roman", serif; }
-    .out table { border-collapse: collapse; margin: auto; }
-    .out td { border: 1px solid #999; padding: 8px 20px; }
-  </style>
-</head>
-<body>
-  <h1>Experiment 10 - HTML Form Request Handling using Node.js and MongoDB</h1>
-  <p>GitHub Pages cannot run Node.js or MongoDB, so this page shows the code and the expected output.
-     The working app is in the <a href="app/app.js">app</a> folder.</p>
-
-  <h2>How to run</h2>
-  <pre>cd Experiment-10/app
-npm install
-# start MongoDB on mongodb://localhost:27017 first
-node app.js
-# open http://localhost:6000</pre>
-  <p>Note: Chrome and Firefox block port 6000 as an unsafe port. If the page does not open, run
-     <code>PORT=3000 node app.js</code> (Windows PowerShell: <code>$env:PORT=3000; node app.js</code>) and open http://localhost:3000.</p>
-
-  <h2>Output 1: http://localhost:6000 (home page)</h2>
-  <div class="out">
-    <h2 style="text-align:center">User Registration Form</h2>
-    <p style="text-align:center">All fields are required and checked by the browser's built-in form validator.</p>
-  </div>
-
-  <h2>Output 2: http://localhost:6000/server (after submit, read from MongoDB)</h2>
-  <div class="out">
-    <h2 style="text-align:center"><u>User Submitted Details</u></h2>
-    <table>
-      <tr><td>Name</td><td>John David</td></tr>
-      <tr><td>Password</td><td>abc123tt</td></tr>
-      <tr><td>Age</td><td>30</td></tr>
-      <tr><td>Mobile Number</td><td>9923457891</td></tr>
-      <tr><td>Email</td><td>johndavid@gmail.com</td></tr>
-      <tr><td>Gender</td><td>Male</td></tr>
-      <tr><td>State</td><td>Kerala</td></tr>
-      <tr><td>Skills</td><td>Java Script, C++</td></tr>
-    </table>
-  </div>
-
-  <h2>app/home.html</h2>
-  <pre>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-  &lt;title&gt;User Registration Form&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: &quot;Times New Roman&quot;, serif; color: blue; }
+    body { font-family: "Times New Roman", serif; color: blue; }
     h1 { text-align: center; }
     table { margin: auto; }
     td { padding: 8px 20px; }
     .star { color: red; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;User Registration Form&lt;/h1&gt;
-  &lt;!-- All fields use the built-in HTML form validator (required, pattern, min, max) --&gt;
-  &lt;form action=&quot;/server&quot; method=&quot;post&quot; onsubmit=&quot;return checkSkills()&quot;&gt;
-    &lt;table&gt;
-      &lt;tr&gt;&lt;td&gt;Name&lt;span class=&quot;star&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Password&lt;span class=&quot;star&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot; required minlength=&quot;6&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Age&lt;span class=&quot;star&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;input type=&quot;number&quot; name=&quot;age&quot; required min=&quot;1&quot; max=&quot;120&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Mobile Number&lt;span class=&quot;star&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;input type=&quot;tel&quot; name=&quot;mobile&quot; required pattern=&quot;[0-9]{10}&quot; title=&quot;10 digits&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Email&lt;span class=&quot;star&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot; required&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Gender&lt;span class=&quot;star&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;Male&quot; required&gt; Male&lt;/label&gt;
-              &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;Female&quot;&gt; Female&lt;/label&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;State&lt;span class=&quot;star&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;select name=&quot;state&quot; required&gt;
-                &lt;option value=&quot;&quot;&gt;-- Select --&lt;/option&gt;
-                &lt;option&gt;Tamilnadu&lt;/option&gt;
-                &lt;option&gt;Kerala&lt;/option&gt;
-                &lt;option&gt;Karnataka&lt;/option&gt;
-              &lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Skills&lt;span class=&quot;star&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;skills&quot; value=&quot;Java Script&quot;&gt; Java Script&lt;/label&gt;
-              &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;skills&quot; value=&quot;Python&quot;&gt; Python&lt;/label&gt;
-              &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;skills&quot; value=&quot;C++&quot;&gt; C++&lt;/label&gt;
-              &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;skills&quot; value=&quot;Java&quot;&gt; Java&lt;/label&gt;&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-  &lt;/form&gt;
+    #details table { border-collapse: collapse; }
+    #details td { border: 1px solid gray; width: 200px; padding: 10px; }
+  </style>
+</head>
+<body>
+  <p><b>Exercise 1: User Registration with Node.js and MongoDB</b> | <a href="Ex-10.html">Back</a></p>
 
-  &lt;script&gt;
-    // HTML has no &quot;required&quot; for a checkbox group, so check at least one skill
-    function checkSkills() {
-      if (document.querySelectorAll(&#x27;input[name=&quot;skills&quot;]:checked&#x27;).length == 0) {
-        alert(&quot;Please select at least one skill&quot;);
-        return false;
-      }
-      return true;
+  <!-- Home page (http://localhost:6000) -->
+  <div id="home">
+    <h1>User Registration Form</h1>
+    <form id="regForm">
+      <table>
+        <tr><td>Name<span class="star">*</span></td>
+            <td><input type="text" name="name" required></td></tr>
+        <tr><td>Password<span class="star">*</span></td>
+            <td><input type="password" name="password" required minlength="6"></td></tr>
+        <tr><td>Age<span class="star">*</span></td>
+            <td><input type="number" name="age" required min="1" max="120"></td></tr>
+        <tr><td>Mobile Number<span class="star">*</span></td>
+            <td><input type="tel" name="mobile" required pattern="[0-9]{10}" title="10 digits"></td></tr>
+        <tr><td>Email<span class="star">*</span></td>
+            <td><input type="email" name="email" required></td></tr>
+        <tr><td>Gender<span class="star">*</span></td>
+            <td><label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label></td></tr>
+        <tr><td>State<span class="star">*</span></td>
+            <td><select name="state" required>
+                  <option value="">-- Select --</option>
+                  <option>Tamilnadu</option>
+                  <option>Kerala</option>
+                  <option>Karnataka</option>
+                </select></td></tr>
+        <tr><td>Skills<span class="star">*</span></td>
+            <td><label><input type="checkbox" name="skills" value="Java Script"> Java Script</label>
+                <label><input type="checkbox" name="skills" value="Python"> Python</label>
+                <label><input type="checkbox" name="skills" value="C++"> C++</label>
+                <label><input type="checkbox" name="skills" value="Java"> Java</label></td></tr>
+        <tr><td></td><td><button type="submit">Submit</button></td></tr>
+      </table>
+    </form>
+  </div>
+
+  <!-- Result page (http://localhost:6000/server) -->
+  <div id="details" style="display: none;">
+    <h1><u>User Submitted Details</u></h1>
+    <table id="result"></table>
+    <p style="text-align: center;"><button id="again">Register another user</button></p>
+  </div>
+
+  <script>
+    // In the browser an array stands in for the MongoDB "users" collection
+    var users = [];
+
+    function esc(text) {
+      return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
 
-  <h2>app/app.js</h2>
-  <pre>// Experiment 10 - HTML form request handling using Node.js and MongoDB
-const http = require(&quot;http&quot;);
-const fs = require(&quot;fs&quot;);
-const path = require(&quot;path&quot;);
-const { MongoClient } = require(&quot;mongodb&quot;);
-
-const url = &quot;mongodb://localhost:27017/&quot;;
-const client = new MongoClient(url);
-const PORT = process.env.PORT || 6000;
-
-// escape text before putting it into HTML
-function esc(text) {
-  return String(text).replace(/&amp;/g, &quot;&amp;amp;&quot;).replace(/&lt;/g, &quot;&amp;lt;&quot;).replace(/&gt;/g, &quot;&amp;gt;&quot;);
-}
-
-const server = http.createServer(function (req, res) {
-  if (req.url === &quot;/&quot; &amp;&amp; req.method === &quot;GET&quot;) {
-    // show the registration form
-    res.writeHead(200, { &quot;Content-Type&quot;: &quot;text/html&quot; });
-    fs.createReadStream(path.join(__dirname, &quot;home.html&quot;)).pipe(res);
-  } else if (req.url === &quot;/server&quot; &amp;&amp; req.method === &quot;POST&quot;) {
-    let rawData = &quot;&quot;;
-    req.on(&quot;data&quot;, function (data) {
-      rawData += data;
-    });
-    req.on(&quot;end&quot;, async function () {
-      const input = new URLSearchParams(rawData);
-      const user = {
-        name: input.get(&quot;name&quot;),
-        password: input.get(&quot;password&quot;),
-        age: input.get(&quot;age&quot;),
-        mobile: input.get(&quot;mobile&quot;),
-        email: input.get(&quot;email&quot;),
-        gender: input.get(&quot;gender&quot;),
-        state: input.get(&quot;state&quot;),
-        skills: input.getAll(&quot;skills&quot;).join(&quot;, &quot;)
-      };
-
-      try {
-        // store the form data in MongoDB, then read it back from the database
-        const users = client.db(&quot;mydb&quot;).collection(&quot;users&quot;);
-        const result = await users.insertOne(user);
-        const saved = await users.findOne({ _id: result.insertedId });
-
-        res.writeHead(200, { &quot;Content-Type&quot;: &quot;text/html&quot; });
-        res.write(&quot;&lt;h1 style=&#x27;text-align:center;color:blue&#x27;&gt;&lt;u&gt;User Submitted Details&lt;/u&gt;&lt;/h1&gt;&quot;);
-        res.write(&quot;&lt;table border=&#x27;1&#x27; cellpadding=&#x27;10&#x27; style=&#x27;margin:auto;border-collapse:collapse;color:blue&#x27;&gt;&quot;);
-        res.write(&quot;&lt;tr&gt;&lt;td&gt;Name&lt;/td&gt;&lt;td&gt;&quot; + esc(saved.name) + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        res.write(&quot;&lt;tr&gt;&lt;td&gt;Password&lt;/td&gt;&lt;td&gt;&quot; + esc(saved.password) + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        res.write(&quot;&lt;tr&gt;&lt;td&gt;Age&lt;/td&gt;&lt;td&gt;&quot; + esc(saved.age) + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        res.write(&quot;&lt;tr&gt;&lt;td&gt;Mobile Number&lt;/td&gt;&lt;td&gt;&quot; + esc(saved.mobile) + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        res.write(&quot;&lt;tr&gt;&lt;td&gt;Email&lt;/td&gt;&lt;td&gt;&quot; + esc(saved.email) + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        res.write(&quot;&lt;tr&gt;&lt;td&gt;Gender&lt;/td&gt;&lt;td&gt;&quot; + esc(saved.gender) + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        res.write(&quot;&lt;tr&gt;&lt;td&gt;State&lt;/td&gt;&lt;td&gt;&quot; + esc(saved.state) + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        res.write(&quot;&lt;tr&gt;&lt;td&gt;Skills&lt;/td&gt;&lt;td&gt;&quot; + esc(saved.skills) + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        res.write(&quot;&lt;/table&gt;&quot;);
-        res.end();
-      } catch (err) {
-        res.writeHead(500, { &quot;Content-Type&quot;: &quot;text/plain&quot; });
-        res.end(&quot;Database error: &quot; + err.message);
+    document.getElementById("regForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var form = this;
+      var skills = [];
+      var boxes = form.querySelectorAll('input[name="skills"]:checked');
+      for (var i = 0; i < boxes.length; i++) {
+        skills.push(boxes[i].value);
       }
+      if (skills.length == 0) {
+        alert("Please select at least one skill");
+        return;
+      }
+
+      // insertOne
+      var user = {
+        name: form.elements["name"].value,
+        password: form.elements["password"].value,
+        age: form.elements["age"].value,
+        mobile: form.elements["mobile"].value,
+        email: form.elements["email"].value,
+        gender: form.elements["gender"].value,
+        state: form.elements["state"].value,
+        skills: skills.join(", ")
+      };
+      users.push(user);
+
+      // findOne: read the saved record back and show it in a table
+      var saved = users[users.length - 1];
+      var rows = [
+        ["Name", saved.name], ["Password", saved.password], ["Age", saved.age],
+        ["Mobile Number", saved.mobile], ["Email", saved.email], ["Gender", saved.gender],
+        ["State", saved.state], ["Skills", saved.skills]
+      ];
+      var html = "";
+      for (var j = 0; j < rows.length; j++) {
+        html += "<tr><td>" + rows[j][0] + "</td><td>" + esc(rows[j][1]) + "</td></tr>";
+      }
+      document.getElementById("result").innerHTML = html;
+      document.getElementById("home").style.display = "none";
+      document.getElementById("details").style.display = "block";
     });
-  } else {
-    res.writeHead(404, { &quot;Content-Type&quot;: &quot;text/plain&quot; });
-    res.end(&quot;Page not found&quot;);
-  }
-});
 
-client.connect().then(function () {
-  server.listen(PORT, function () {
-    console.log(&quot;Connected to MongoDB. Server running at http://localhost:&quot; + PORT);
-  });
-}).catch(function (err) {
-  console.log(&quot;Could not connect to MongoDB: &quot; + err.message);
-});
-</pre>
-
-  <h2>app/package.json</h2>
-  <pre>{
-  &quot;name&quot;: &quot;experiment-10-node-mongodb&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;User registration form handled by Node.js and stored in MongoDB&quot;,
-  &quot;main&quot;: &quot;app.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;node app.js&quot;
-  },
-  &quot;author&quot;: &quot;Sivasanand (URK24CS9062)&quot;,
-  &quot;license&quot;: &quot;MIT&quot;,
-  &quot;dependencies&quot;: {
-    &quot;mongodb&quot;: &quot;^6.8.0&quot;
-  }
-}
-</pre>
-
-  <p><a href="Ex-10.html">Back to Experiment 10</a></p>
+    document.getElementById("again").addEventListener("click", function () {
+      document.getElementById("regForm").reset();
+      document.getElementById("details").style.display = "none";
+      document.getElementById("home").style.display = "block";
+    });
+  </script>
 </body>
 </html>
