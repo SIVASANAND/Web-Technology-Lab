@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 2: Comment Box</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body ng-app="commentApp">
-  <p><b>Exercise 2: Comment Box</b> | <a href="Ex-8.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-8.html">&larr; Back</a>
+  <p class="label">Exercise 2</p>
+  <h1>Comment Box</h1>
   <div ng-controller="FrmController">
     <h3>Post your Comment</h3>
-    <textarea ng-model="txtcomment" placeholder="Your Comment" style="width: 550px;"></textarea><br>
+    <textarea ng-model="txtcomment" placeholder="Your Comment" rows="3"></textarea><br>
     <button ng-click="btn_add()" style="margin-top: 10px;">Post Comment</button>
 
     <h4>Comments</h4>
@@ -20,6 +24,8 @@
       </li>
     </ul>
   </div>
+
+  </main>
 
   <script>
     angular.module("commentApp", []).controller("FrmController", function ($scope) {

@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 1: Hello World Application</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body ng-app="app">
-  <p><b>Exercise 1: Hello World Application</b> | <a href="Ex-8.html">Back</a></p>
-  <h1 ng-controller="HelloWorldCtrl">{{message}}</h1>
+  <main class="container">
+  <a class="back" href="Ex-8.html">&larr; Back</a>
+  <p class="label">Exercise 1</p>
+  <h1>Hello World Application</h1>
+  <h2 class="output" ng-controller="HelloWorldCtrl">{{message}}</h2>
+
+  </main>
 
   <script>
     angular.module("app", []).controller("HelloWorldCtrl", function ($scope) {

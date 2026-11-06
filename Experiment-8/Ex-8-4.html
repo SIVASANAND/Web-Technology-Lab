@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 4: Todo List</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
-  <p><b>Exercise 4: Todo List</b> | <a href="Ex-8.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-8.html">&larr; Back</a>
+  <p class="label">Exercise 4</p>
   <h1>Todo List</h1>
   <div ng-app="todoApp" ng-controller="todoController">
     <input ng-model="title" placeholder="New task">
@@ -16,6 +19,8 @@
       <li ng-repeat="t in tasks track by $index">{{ t }}</li>
     </ul>
   </div>
+
+  </main>
 
   <script>
     angular.module("todoApp", []).controller("todoController", function ($scope) {

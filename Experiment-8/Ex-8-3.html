@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 3: Simple Calculator</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="calculator.js"></script>
 </head>
 <body>
-  <p><b>Exercise 3: Simple Calculator</b> | <a href="Ex-8.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-8.html">&larr; Back</a>
+  <p class="label">Exercise 3</p>
   <h1>Simple Calculator</h1>
   <div ng-app="CalculatorApp" ng-controller="CalculatorController">
     <p><input type="number" ng-model="a"></p>
@@ -23,5 +26,7 @@
     </p>
     <p>Result: {{ result() }}</p>
   </div>
+  </main>
+
 </body>
 </html>
