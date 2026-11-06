@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 2.1 - HTML5 Form Elements</title>
+</head>
+<body>
+  <!-- Page 1 of the website: form elements -->
+  <h1>Student Registration</h1>
+  <p><a href="Ex-2-1.html">Registration Form</a> | <a href="Ex-2-2.html">Media Gallery</a></p>
+
+  <form action="#" method="get">
+    <fieldset>
+      <legend>Personal Details</legend>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname" required><br><br>
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <label for="pwd">Password:</label>
+      <input type="password" id="pwd" name="pwd"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone"><br><br>
+      <label for="dob">Date of birth:</label>
+      <input type="date" id="dob" name="dob"><br><br>
+      Gender:
+      <label><input type="radio" name="gender" value="male"> Male</label>
+      <label><input type="radio" name="gender" value="female"> Female</label>
+      <input type="hidden" name="regno" value="URK24CS9062">
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>Course Details</legend>
+      <label for="dept">Department:</label>
+      <select id="dept" name="dept">
+        <option value="cse">CSE</option>
+        <option value="ece">ECE</option>
+        <option value="eee">EEE</option>
+        <option value="mech">Mechanical</option>
+      </select><br><br>
+      Subjects:
+      <label><input type="checkbox" name="sub" value="web"> Web Tech</label>
+      <label><input type="checkbox" name="sub" value="ds"> Data Structures</label><br><br>
+      <label for="year">Year of joining:</label>
+      <input type="number" id="year" name="year" min="2020" max="2030"><br><br>
+      <label for="month">Start month:</label>
+      <input type="month" id="month" name="month"><br><br>
+      <label for="week">Week:</label>
+      <input type="week" id="week" name="week"><br><br>
+      <label for="time">Class time:</label>
+      <input type="time" id="time" name="time"><br><br>
+      <label for="meet">Meeting:</label>
+      <input type="datetime-local" id="meet" name="meet"><br><br>
+      <label for="site">Website:</label>
+      <input type="url" id="site" name="site"><br><br>
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search"><br><br>
+      <label for="level">Skill level:</label>
+      <input type="range" id="level" name="level" min="0" max="10"><br><br>
+      <label for="photo">Photo:</label>
+      <input type="file" id="photo" name="photo"><br><br>
+      <label for="addr">Address:</label><br>
+      <textarea id="addr" name="addr" rows="4" cols="40"></textarea>
+    </fieldset>
+    <br>
+
+    <label for="prog">Form progress:</label>
+    <progress id="prog" value="70" max="100">70%</progress><br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    <input type="button" value="Button" onclick="alert('Button clicked')">
+    <input type="image" src="media/banner.svg" alt="Submit image" width="90">
+  </form>
+</body>
+</html>
