@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 4: Currency Convertor</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p><b>Exercise 4: Currency Convertor</b> | <a href="Ex-5.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-5.html">&larr; Back</a>
+  <p class="label">Exercise 4</p>
   <h1>The Currency Convertor</h1>
   <fieldset>
     Convert <input type="text" id="data" />
@@ -22,6 +25,8 @@
     <button onclick="convert();">Calculate</button>
     <span id="answer"></span>
   </fieldset>
+
+  </main>
 
   <script>
     function convert() {

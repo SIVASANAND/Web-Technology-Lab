@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 6: Birthday Cake Order Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p><b>Exercise 6: Birthday Cake Order Form</b> | <a href="Ex-5.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-5.html">&larr; Back</a>
+  <p class="label">Exercise 6</p>
   <h1>Birthday Cake Order Form</h1>
   <fieldset>
     # of 1/2kg Cakes (Rs.100) <input type="text" id="small" value="0" /><br />
@@ -19,6 +22,8 @@
     <button id="submit">Calculate Order</button>
   </fieldset>
   <p>Cost of order: <span id="price"></span></p>
+
+  </main>
 
   <script>
     // unobtrusive event handler

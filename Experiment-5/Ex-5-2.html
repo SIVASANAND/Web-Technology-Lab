@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 2: BMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p><b>Exercise 2: BMI Calculator</b> | <a href="Ex-5.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-5.html">&larr; Back</a>
+  <p class="label">Exercise 2</p>
   <h1>Calculate your Body Mass Index (BMI)!</h1>
   <fieldset>
     Weight (in kilograms): <input type="text" id="weight" /><br />
@@ -17,6 +20,8 @@
     Your BMI is <span id="score"></span>. <br />
     Your body type is <span id="type"></span>.
   </p>
+
+  </main>
 
   <script>
     function calculate() {

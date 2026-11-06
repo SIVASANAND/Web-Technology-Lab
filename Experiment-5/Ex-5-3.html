@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 3: Fruit Farm</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p><b>Exercise 3: Fruit Farm</b> | <a href="Ex-5.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-5.html">&larr; Back</a>
+  <p class="label">Exercise 3</p>
   <h1>Fruit Farm</h1>
   <div>
     Rows: <input type="text" id="rows" />
@@ -14,6 +17,8 @@
     <button onclick="grow();">Plant Garden</button>
   </div>
   <div id="garden"></div>
+
+  </main>
 
   <script>
     function grow() {
