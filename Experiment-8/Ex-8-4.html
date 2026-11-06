@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 8.4 - Simple Todo List</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+  <h1>Todo List</h1>
+  <div ng-app="todoApp" ng-controller="todoController">
+    <input ng-model="title" placeholder="New task">
+    <button ng-click="add()">Add</button>
+    <ul>
+      <li ng-repeat="t in tasks track by $index">{{ t }}</li>
+    </ul>
+  </div>
+
+  <script>
+    angular.module("todoApp", []).controller("todoController", function ($scope) {
+      $scope.tasks = [];
+      $scope.add = function () {
+        if ($scope.title) {
+          $scope.tasks.push($scope.title);
+          $scope.title = "";
+        }
+      };
+    });
+  </script>
+</body>
+</html>
