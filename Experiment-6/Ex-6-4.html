@@ -4,14 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 4: Move and Stop Car Image</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p><b>Exercise 4: Move and Stop Car Image</b> | <a href="Ex-6.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-6.html">&larr; Back</a>
+  <p class="label">Exercise 4</p>
   <h1>Moving Car</h1>
   <button onclick="moveRight()">Move</button>
   <button onclick="stop()">Stop</button>
-  <br><br>
-  <img id="car" src="images/car.jpg" alt="car" width="180" height="119">
+  <div class="track">
+    <img id="car" src="images/car.jpg" alt="car" width="180" height="119">
+  </div>
+
+  </main>
 
   <script>
     var imgObj;

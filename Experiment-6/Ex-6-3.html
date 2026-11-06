@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 3: Change Font Size on Mouse Over</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p><b>Exercise 3: Change Font Size on Mouse Over</b> | <a href="Ex-6.html">Back</a></p>
+  <main class="container">
+  <a class="back" href="Ex-6.html">&larr; Back</a>
+  <p class="label">Exercise 3</p>
   <h1>Change font size!</h1>
   <p id="para1" onmouseover="incSize()" onmouseout="decSize()">
     move cursor over me to zoom in...
   </p>
+
+  </main>
 
   <script>
     function incSize() {
