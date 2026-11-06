@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 4.3 - Adjacent Sibling Hover and Striped Table</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; }
+    td, th { border: 1px solid #555; padding: 8px 16px; }
+
+    /* Image is faded until its name is hovered */
+    .itemImg { opacity: 0.2; }
+    .itemName:hover + .itemImg { opacity: 1; }
+
+    /* Odd and even rows */
+    tr:nth-child(odd) { background-color: #e0f2fe; }
+    tr:nth-child(even) { background-color: #fef3c7; }
+    tr:hover { background-color: #86efac; }
+  </style>
+</head>
+<body>
+  <h1>Hover on an item name to show its image</h1>
+  <table>
+    <tr><th>Item</th><th>Image</th></tr>
+    <tr><td class="itemName">Item 1</td><td class="itemImg"><img src="images/item1.svg" alt="Item 1"></td></tr>
+    <tr><td class="itemName">Item 2</td><td class="itemImg"><img src="images/item2.svg" alt="Item 2"></td></tr>
+    <tr><td class="itemName">Item 3</td><td class="itemImg"><img src="images/item3.svg" alt="Item 3"></td></tr>
+  </table>
+</body>
+</html>

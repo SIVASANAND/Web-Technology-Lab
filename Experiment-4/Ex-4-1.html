@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 4.1 - Rounded Corners, Borders, Backgrounds, Gradients, Shadows</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    div { margin-bottom: 20px; padding: 20px; }
+
+    /* Rounded corners */
+    .round1 { border: 2px solid #2563eb; border-radius: 25px; }
+    .round2 { border: 2px solid #16a34a; border-radius: 15px 50px 30px 5px; }
+
+    /* Border image */
+    .bimg1 { border: 30px solid transparent; border-image: url(images/border.svg) 30 round; }
+    .bimg2 { border: 30px solid transparent; border-image: url(images/border.svg) 30 stretch; }
+
+    /* Multiple backgrounds */
+    .multi {
+      height: 120px;
+      background-image: url(images/flower.svg), url(images/paper.svg);
+      background-position: right bottom, left top;
+      background-repeat: no-repeat, repeat;
+    }
+
+    /* Background size */
+    .bsize {
+      height: 100px;
+      background: url(images/flower.svg);
+      background-size: 100px 80px;
+      background-repeat: no-repeat;
+      padding-left: 120px;
+    }
+
+    /* Gradients */
+    .linear { background: linear-gradient(to right, red, yellow); }
+    .radial { background: radial-gradient(circle, white, skyblue, blue); color: white; }
+
+    /* Shadows */
+    .box-shadow { background: #f1f5f9; box-shadow: 8px 8px 12px gray; }
+    .text-shadow { font-size: 28px; text-shadow: 3px 3px 5px orange; }
+  </style>
+</head>
+<body>
+  <h1>Advanced CSS3 Properties</h1>
+
+  <div class="round1">border-radius: 25px</div>
+  <div class="round2">border-radius: 15px 50px 30px 5px</div>
+
+  <div class="bimg1">border-image: round</div>
+  <div class="bimg2">border-image: stretch</div>
+
+  <div class="multi">Multiple backgrounds: flower on top of paper</div>
+  <div class="bsize">background-size: 100px 80px</div>
+
+  <div class="linear">Linear gradient</div>
+  <div class="radial">Radial gradient</div>
+
+  <div class="box-shadow">Box shadow</div>
+  <div class="text-shadow">Text shadow</div>
+</body>
+</html>

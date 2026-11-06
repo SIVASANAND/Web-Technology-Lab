@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 4.2 - Pseudo Classes on Input Elements</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    input { padding: 6px; margin: 6px 0; }
+
+    input:required { border: 3px solid blue; background-color: yellow; }
+    input:focus { border: 3px solid red; background-color: lightgreen; }
+    input:hover { border-color: purple; }
+
+    input[type="email"]:invalid { color: red; }
+    input[type="email"]:valid { color: blue; }
+  </style>
+</head>
+<body>
+  <h1>Pseudo Classes: focus, required, valid, hover</h1>
+  <form>
+    Name (required): <br>
+    <input type="text" required><br>
+    Email (red if invalid, blue if valid): <br>
+    <input type="email" required><br>
+    City (not required): <br>
+    <input type="text"><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
