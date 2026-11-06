@@ -3,114 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ex 1 - Simple Web Design using HTML</title>
+  <title>Exercise 1: Simple Web Page using HTML</title>
 </head>
 <body>
-  <!-- Header section -->
-  <header id="top">
-    <h1>My College Department</h1>
-    <p>Simple web page using HTML5 elements - Sivasanand (URK24CS9062)</p>
+  <p><b>Exercise 1: Simple Web Page using HTML</b> | <a href="Ex-1.html">Back</a></p>
+
+  <!-- Header -->
+  <header>
+    <h1 style="text-align: center;">HEADING</h1>
+    <nav style="text-align: center;">
+      <a href="#sub1">Heading 1</a> |
+      <a href="#sub2">Heading 2</a> |
+      <a href="#links">Links</a>
+    </nav>
+    <hr>
   </header>
 
-  <!-- Navigation with bookmark links -->
-  <nav>
-    <a href="#about">About</a> |
-    <a href="#courses">Courses</a> |
-    <a href="#timetable">Timetable</a> |
-    <a href="#links">Links</a>
-  </nav>
-  <hr>
-
-  <section id="about">
-    <h2>About</h2>
+  <!-- Section 1: text, contact links and clickable image -->
+  <section>
+    <h1>Heading1</h1>
+    <h3 id="sub1">Sub heading1</h3>
     <div>
-      <img src="images/logo.svg" alt="Web Technology logo" width="200" height="120">
       <p>
-        The department teaches <abbr title="HyperText Markup Language">HTML</abbr>,
-        <abbr title="Cascading Style Sheets">CSS</abbr> and JavaScript.
-        Students learn to build <em>clean</em> and <mark>standard</mark> web pages.
-        <span style="color: blue;">This text is inside a span.</span>
+        <u>Lorem ipsum</u> dolor sit amet, <em>consectetur adipiscing elit</em>.
+        Nulla quam velit, <mark>vulputate eu</mark> pharetra nec, mattis ac neque.
+        <span style="color: red;">Duis vulputate commodo lectus, ac blandit elit tincidunt id.</span>
+        Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,
+        et lacinia ipsum quam nec dui.
       </p>
-      <p>Water is H<sub>2</sub>O and 2<sup>3</sup> = 8.</p>
-      <p>To write a tag use entities: &lt;p&gt; &amp; &copy; 2026</p>
-      <p>Use the <code>&lt;table&gt;</code> tag to create a table.</p>
+      <p>
+        <abbr title="HyperText Markup Language">HTML</abbr> is written in plain text.
+        Water is H<sub>2</sub>O and 2<sup>10</sup> = 1024.
+        The tag <code>&lt;p&gt;</code> makes a paragraph &amp; &copy; is the copyright sign.
+      </p>
       <blockquote>
-        "The Web is for everyone." - <cite>Tim Berners-Lee</cite>
+        "The Web is for everyone." &mdash; <cite>Tim Berners-Lee</cite>
       </blockquote>
       <pre>
-Preformatted text
-    keeps   spaces
-  and line breaks
+Preformatted   text
+    keeps spaces and
+        line breaks
       </pre>
+      <p>
+        <a href="mailto:student@example.com">E-MAIL</a><br>
+        <a href="tel:+919876543210">Phone.no</a>
+      </p>
+      <p>
+        <a href="https://www.karunya.edu/" target="_blank">
+          <img src="images/logo.svg" alt="Clickable image" width="100" height="60">
+        </a>
+        Clickable Image
+      </p>
     </div>
   </section>
 
-  <section id="courses">
-    <h2>Courses</h2>
-    <h3>Unordered list</h3>
-    <ul type="square">
-      <li>Web Technology</li>
-      <li>Data Structures</li>
-      <li>Operating Systems</li>
+  <!-- Section 2: table with rowspan / colspan and nested lists -->
+  <section>
+    <h1>Heading 2</h1>
+    <h3 id="sub2">Sub heading2</h3>
+    <table border="1" cellpadding="5" style="margin: auto;">
+      <caption>Table with rowspan and colspan</caption>
+      <tr>
+        <td>Row 1 - Col 1</td>
+        <td>Row 1 - Col 2</td>
+        <td>Row 1 - Col 3</td>
+        <td rowspan="4">Row 1, 2, 3 &amp; 4 - Col 4</td>
+      </tr>
+      <tr>
+        <td>Row 2 - Col 1</td>
+        <td rowspan="3" colspan="2" style="text-align: center;">Row 2, 3 &amp; 4 - Col 2 &amp; 3</td>
+      </tr>
+      <tr>
+        <td>Row 3 - Col 1</td>
+      </tr>
+      <tr>
+        <td>Row 4 - Col 1</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;">Row 5 - Col 1 &amp; 2</td>
+        <td colspan="2" style="text-align: center;">Row 5 - Col 3 &amp; 4</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;">Row 6 - Col 1, 2, 3 &amp; 4</td>
+      </tr>
+    </table>
+
+    <p>This is a fairly complicated mixed list.</p>
+    <ul>
+      <li>First item
+        <ol>
+          <li>First item of the nested list</li>
+          <li>Second item of the nested list
+            <ul type="square">
+              <li>This item is nested even further</li>
+              <li>And this one too
+                <ol type="A">
+                  <li>First item of yet another numbered list</li>
+                  <li>Second item of yet another numbered list</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li>Second item</li>
+      <li>Third item</li>
     </ul>
-    <h3>Ordered list</h3>
-    <ol type="I">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ol>
-    <h3>Definition list</h3>
+
     <dl>
       <dt>HTML</dt>
-      <dd>Structure of a web page.</dd>
+      <dd>Gives the structure of a web page.</dd>
       <dt>CSS</dt>
-      <dd>Style of a web page.</dd>
+      <dd>Gives the style of a web page.</dd>
     </dl>
   </section>
 
-  <section id="timetable">
-    <h2>Timetable</h2>
-    <table border="1" cellpadding="6">
-      <caption>Weekly Timetable</caption>
-      <tr>
-        <th>Day</th>
-        <th>9 - 10</th>
-        <th>10 - 11</th>
-        <th>11 - 12</th>
-      </tr>
-      <tr>
-        <td>Monday</td>
-        <td colspan="2">Web Technology Lab</td>
-        <td>Maths</td>
-      </tr>
-      <tr>
-        <td>Tuesday</td>
-        <td>DS</td>
-        <td rowspan="2">OS</td>
-        <td>English</td>
-      </tr>
-      <tr>
-        <td>Wednesday</td>
-        <td>Maths</td>
-        <td>DS</td>
-      </tr>
-    </table>
-  </section>
-
+  <!-- Section 3: link targets -->
   <section id="links">
-    <h2>Links</h2>
     <p>Click any of the following links</p>
-    <a href="https://developer.mozilla.org/" target="_blank">Opens in New</a> |
-    <a href="https://developer.mozilla.org/" target="_self">Opens in Self</a> |
-    <a href="https://developer.mozilla.org/" target="_parent">Opens in Parent</a> |
-    <a href="https://developer.mozilla.org/" target="_top">Opens in Body</a>
-    <p><a href="#top">Back to top</a></p>
+    <a href="https://www.w3schools.com/html/" target="_blank">Opens in New</a> |
+    <a href="https://www.w3schools.com/html/" target="_self">Opens in Self</a> |
+    <a href="https://www.w3schools.com/html/" target="_parent">Opens in Parent</a> |
+    <a href="https://www.w3schools.com/html/" target="_top">Opens in Body</a>
   </section>
 
-  <hr>
-  <!-- Footer section -->
+  <!-- Footer with bookmark links -->
   <footer>
-    <p>&copy; 2026 Sivasanand | URK24CS9062</p>
+    <hr>
+    <a href="#sub1">Go to subheading 1</a> | <a href="#sub2">Go to subheading2</a>
   </footer>
 </body>
 </html>
