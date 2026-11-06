@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 7.2 - Cake Shop</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body { font-family: Calibri, Arial, sans-serif; width: 500px; margin: auto; }
+    .title { background: #c00000; color: white; text-align: center; padding: 5px; }
+    .cakes { display: flex; justify-content: space-between; text-align: center; font-size: 12px; }
+    h2 { color: #1d4ed8; text-align: center; }
+    label { color: #1d4ed8; font-size: 13px; font-weight: bold; }
+    input { width: 100%; margin: 3px 0 8px; padding: 4px; color: #c00000; font-weight: bold; }
+    button { display: block; margin: 10px auto; width: 160px; padding: 6px; background: #0d6efd; color: white; border: none; border-radius: 4px; }
+    h3 { color: green; text-align: center; border-top: 1px solid blue; padding-top: 10px; }
+    .total { background: #28a745; color: white; padding: 4px 30px; }
+    #price { color: #c00000; font-weight: bold; font-size: 18px; margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <div class="title">CAKE SHOP</div>
+  <div class="cakes">
+    <div><img src="images/colorcake.svg" alt="Color cake"><br>Color Cake - Rs. 300</div>
+    <div><img src="images/browncake.svg" alt="Brown cake"><br>Brown Cake - Rs. 200</div>
+    <div><img src="images/milkycake.svg" alt="Milky cake"><br>Milky Cake - Rs. 250</div>
+    <div><img src="images/blackforest.svg" alt="Black forest cake"><br>Black Forest Cake - Rs. 350</div>
+  </div>
+
+  <h2>Order Cake</h2>
+  <label>Color Cake(Quantity)</label><input type="number" id="color" value="0">
+  <label>Brown Cake(Quantity)</label><input type="number" id="brown" value="0">
+  <label>Milky Cake(Quantity)</label><input type="number" id="milky" value="0">
+  <label>Black Forest Cake(Quantity)</label><input type="number" id="black" value="0">
+  <button id="order">Place Order</button>
+
+  <h3>Purchase Order Bill!!</h3>
+  <p style="text-align: center;"><span class="total">Total Price</span><span id="price"></span></p>
+
+  <script>
+    $(document).ready(function () {
+      $("#order").click(function () {
+        var total = $("#color").val() * 300 +
+                    $("#brown").val() * 200 +
+                    $("#milky").val() * 250 +
+                    $("#black").val() * 350;
+        $("#price").text("Rs." + total);
+      });
+    });
+  </script>
+</body>
+</html>

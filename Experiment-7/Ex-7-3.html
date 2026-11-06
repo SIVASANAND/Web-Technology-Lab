@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 7.3 - Car Workshop</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; }
+    h1 { color: #2563eb; }
+    .car { position: relative; width: 240px; height: 160px; margin: 20px auto; }
+    #glass { position: absolute; left: 70px; top: 10px; width: 100px; height: 45px;
+             background: #4ade80; clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%); }
+    #body { position: absolute; left: 0; top: 55px; width: 240px; height: 50px; background: #84cc16; }
+    .tyre { position: absolute; top: 85px; width: 60px; height: 60px; border-radius: 50%; background: #111c44; }
+    #t1 { left: 25px; }
+    #t2 { left: 150px; }
+    button { margin: 5px 15px; }
+  </style>
+</head>
+<body>
+  <h1>Car Workshop</h1>
+  <div class="car">
+    <div id="glass"></div>
+    <div id="body"></div>
+    <div class="tyre" id="t1"></div>
+    <div class="tyre" id="t2"></div>
+  </div>
+
+  <button id="glassBtn">Change Glass Color</button>
+  <button id="bodyBtn">Change Body Color</button>
+  <button id="bigBtn">Tyre Size Increase</button>
+  <button id="smallBtn">Tyre Size Decrease</button>
+  <button id="resetBtn">Reset</button>
+
+  <script>
+    $(document).ready(function () {
+      var tints = ["#4ade80", "#1e293b", "#93c5fd", "#a3a3a3"];
+      var colors = ["#84cc16", "#dc2626", "#2563eb", "#f59e0b", "#7c3aed"];
+      var g = 0, b = 0, size = 60;
+
+      $("#glassBtn").click(function () {
+        g = (g + 1) % tints.length;
+        $("#glass").css("background", tints[g]);
+      });
+
+      $("#bodyBtn").click(function () {
+        b = (b + 1) % colors.length;
+        $("#body").css("background", colors[b]);
+      });
+
+      function setTyre() {
+        // keep the tyre centre in the same place while resizing
+        $(".tyre").css({ width: size, height: size, top: 115 - size / 2 });
+        $("#t1").css("left", 55 - size / 2);
+        $("#t2").css("left", 180 - size / 2);
+      }
+
+      $("#bigBtn").click(function () {
+        if (size < 90) { size += 10; setTyre(); }
+      });
+
+      $("#smallBtn").click(function () {
+        if (size > 30) { size -= 10; setTyre(); }
+      });
+
+      $("#resetBtn").click(function () {
+        g = 0; b = 0; size = 60;
+        $("#glass").css("background", tints[0]);
+        $("#body").css("background", colors[0]);
+        setTyre();
+      });
+    });
+  </script>
+</body>
+</html>
