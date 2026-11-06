@@ -19,7 +19,7 @@
 
   <script>
     angular.module("todoApp", []).controller("todoController", function ($scope) {
-      $scope.tasks = [];
+      $scope.tasks = ["Complete the Web Technology lab record", "Revise AngularJS directives"];
       $scope.add = function () {
         if ($scope.title) {
           $scope.tasks.push($scope.title);

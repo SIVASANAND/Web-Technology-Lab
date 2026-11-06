@@ -9,7 +9,7 @@
   <p><b>Exercise 5: Coin Flip</b> | <a href="Ex-5.html">Back</a></p>
   <h1>Heads or Tails?</h1>
   <div>
-    <img src="images/heads.svg" id="coin" alt="coin" /> <br />
+    <img src="images/heads.png" id="coin" alt="coin" width="150" height="150" /> <br />
     <button id="flip">Flip!</button>
   </div>
   <p>
@@ -26,10 +26,10 @@
 
     function flipFunction() {
       if (Math.random() < 0.5) {
-        document.getElementById("coin").src = "images/heads.svg";
+        document.getElementById("coin").src = "images/heads.png";
         heads++;
       } else {
-        document.getElementById("coin").src = "images/tails.svg";
+        document.getElementById("coin").src = "images/tails.png";
         tails++;
       }
       document.getElementById("num_heads").innerHTML = heads;
