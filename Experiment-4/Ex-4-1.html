@@ -3,61 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ex 4.1 - Rounded Corners, Borders, Backgrounds, Gradients, Shadows</title>
+  <title>Exercise 1: Website using Advanced CSS3</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    div { margin-bottom: 20px; padding: 20px; }
-
-    /* Rounded corners */
-    .round1 { border: 2px solid #2563eb; border-radius: 25px; }
-    .round2 { border: 2px solid #16a34a; border-radius: 15px 50px 30px 5px; }
-
-    /* Border image */
-    .bimg1 { border: 30px solid transparent; border-image: url(images/border.svg) 30 round; }
-    .bimg2 { border: 30px solid transparent; border-image: url(images/border.svg) 30 stretch; }
-
-    /* Multiple backgrounds */
-    .multi {
-      height: 120px;
-      background-image: url(images/flower.svg), url(images/paper.svg);
-      background-position: right bottom, left top;
-      background-repeat: no-repeat, repeat;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
     }
 
-    /* Background size */
-    .bsize {
-      height: 100px;
-      background: url(images/flower.svg);
-      background-size: 100px 80px;
-      background-repeat: no-repeat;
-      padding-left: 120px;
+    .top { margin: 10px; }
+
+    /* Header: multiple backgrounds over a gradient, background-size */
+    header {
+      height: 200px;
+      background-image: url(images/flower.svg), url(images/paper.svg), linear-gradient(to bottom right, #1e3a8a, #3b82f6);
+      background-position: 20px 20px, 70px 70px, left top;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-size: 80px 80px, 60px 90px, cover;
     }
 
-    /* Gradients */
-    .linear { background: linear-gradient(to right, red, yellow); }
-    .radial { background: radial-gradient(circle, white, skyblue, blue); color: white; }
+    header h1 {
+      margin: 0;
+      padding-top: 80px;
+      text-align: center;
+      color: white;
+      text-shadow: 3px 3px 6px black;
+    }
 
-    /* Shadows */
-    .box-shadow { background: #f1f5f9; box-shadow: 8px 8px 12px gray; }
-    .text-shadow { font-size: 28px; text-shadow: 3px 3px 5px orange; }
+    /* Navigation */
+    nav {
+      background-color: gray;
+      display: flex;
+    }
+
+    nav a {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a.active { background-color: red; }
+    nav a:hover { background-color: #555; }
+
+    /* Favourites table: rounded corners, border image, nth-child, sibling hover */
+    .fav {
+      background-color: pink;
+      padding: 20px;
+    }
+
+    .box {
+      width: 300px;
+      margin-left: 20%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 5px 5px 10px gray;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: darkgreen;
+      color: white;
+      padding: 8px;
+    }
+
+    td { padding: 8px 20px; }
+
+    tr:nth-child(odd) { background-color: greenyellow; }
+    tr:nth-child(even) { background-color: green; color: white; }
+    tr:hover { background-color: gold; color: black; }
+
+    .itemImg { opacity: 0.2; }
+    .itemName:hover + .itemImg { opacity: 1; }
+
+    .note {
+      width: 300px;
+      margin: 20px 0 0 20%;
+      padding: 10px;
+      border: 20px solid transparent;
+      border-image: url(images/border.svg) 30 round;
+      background-color: white;
+    }
+
+    /* Sign in / sign up forms */
+    .forms {
+      background: radial-gradient(circle, #6b7280, #111827);
+      padding: 40px 10px;
+      text-align: center;
+    }
+
+    .card {
+      display: inline-block;
+      vertical-align: top;
+      width: 250px;
+      margin: 10px 20px;
+      padding: 20px;
+      background-color: white;
+      text-align: left;
+      border-radius: 15px 50px 30px 5px;
+      box-shadow: 0 0 15px black;
+    }
+
+    .card h2 { text-align: center; margin-top: 0; }
+
+    .card input {
+      width: 95%;
+      padding: 6px;
+      margin: 4px 0 10px;
+      background-color: lightgray;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+
+    .card input:required { border: 3px solid blue; background-color: yellow; }
+    .card input:focus { border: 3px solid red; background-color: lightgreen; }
+    .card input:hover { border-color: purple; }
+    .card input[type="email"]:invalid { color: red; }
+    .card input[type="email"]:valid { color: blue; }
+
+    .card button {
+      width: 100%;
+      padding: 8px;
+      color: white;
+      background-color: #0d6efd;
+      border: none;
+      border-radius: 25px;
+    }
+
+    footer {
+      background-color: bisque;
+      padding: 15px;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
-  <h1>Advanced CSS3 Properties</h1>
+  <p class="top"><b>Exercise 1: Website using Advanced CSS3</b> | <a href="Ex-4.html">Back</a></p>
 
-  <div class="round1">border-radius: 25px</div>
-  <div class="round2">border-radius: 15px 50px 30px 5px</div>
+  <header>
+    <h1>Flower Gift Shop</h1>
+  </header>
 
-  <div class="bimg1">border-image: round</div>
-  <div class="bimg2">border-image: stretch</div>
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#favourites">About</a>
+    <a href="#signin">Myself</a>
+    <a href="#contact">Others</a>
+  </nav>
 
-  <div class="multi">Multiple backgrounds: flower on top of paper</div>
-  <div class="bsize">background-size: 100px 80px</div>
+  <!-- Favourites: hover an item name to show its image -->
+  <section class="fav" id="favourites">
+    <div class="box" id="home">
+    <table>
+      <tr><th colspan="2">Favourites</th></tr>
+      <tr><td class="itemName">item1</td><td class="itemImg"><img src="images/item1.svg" alt="item1" width="40"></td></tr>
+      <tr><td class="itemName">item2</td><td class="itemImg"><img src="images/item2.svg" alt="item2" width="40"></td></tr>
+      <tr><td class="itemName">item3</td><td class="itemImg"><img src="images/item3.svg" alt="item3" width="40"></td></tr>
+      <tr><td class="itemName">item4</td><td class="itemImg"><img src="images/item4.svg" alt="item4" width="40"></td></tr>
+    </table>
+    </div>
+    <p class="note">Move the mouse over an item name to see its picture.</p>
+  </section>
 
-  <div class="linear">Linear gradient</div>
-  <div class="radial">Radial gradient</div>
+  <!-- Sign in and sign up forms with pseudo classes -->
+  <section class="forms" id="signin">
+    <form class="card">
+      <h2>Sign In</h2>
+      <label for="user">Username</label>
+      <input type="text" id="user" placeholder="Enter Username / Email / Phone Number" required>
+      <label for="pass">Password</label>
+      <input type="password" id="pass" placeholder="Enter Password" required>
+      <button type="submit">Sign In</button>
+    </form>
 
-  <div class="box-shadow">Box shadow</div>
-  <div class="text-shadow">Text shadow</div>
+    <form class="card">
+      <h2>Sign Up</h2>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter Name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter Email" required>
+      <label for="newpass">Password</label>
+      <input type="password" id="newpass" placeholder="Enter Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </section>
+
+  <footer id="contact">
+    Karunya Nagar, Coimbatore - 641114<br>
+    &copy; 2026 URK24CS9062 - Web Technology Lab. All Rights Reserved.
+  </footer>
 </body>
 </html>
