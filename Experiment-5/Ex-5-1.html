@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 5.1 - Shortest and Longest Word</title>
+</head>
+<body>
+  <h1>Shortest and Longest Word</h1>
+  <input type="text" id="text" size="40" value="Web Development Tutorial">
+  <button onclick="show()">Find</button>
+  <p id="result"></p>
+
+  <script>
+    function findWords(str) {
+      var words = str.trim().split(" ");
+      var shortest = words[0];
+      var longest = words[0];
+      for (var i = 1; i < words.length; i++) {
+        if (words[i].length < shortest.length) shortest = words[i];
+        if (words[i].length > longest.length) longest = words[i];
+      }
+      return { shortest: shortest, longest: longest };
+    }
+
+    function show() {
+      var r = findWords(document.getElementById("text").value);
+      document.getElementById("result").innerHTML =
+        "Shortest: '" + r.shortest + "'<br>Longest: '" + r.longest + "'";
+    }
+  </script>
+</body>
+</html>

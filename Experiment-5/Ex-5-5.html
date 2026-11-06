@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 5.5 - Coin Flip</title>
+</head>
+<body>
+  <h1>Heads or Tails?</h1>
+  <div>
+    <img src="images/heads.svg" id="coin" alt="coin" /> <br />
+    <button id="flip">Flip!</button>
+  </div>
+  <p>
+    Heads Total: <span id="num_heads">0</span><br />
+    Tails Total: <span id="num_tails">0</span>
+  </p>
+
+  <script>
+    var heads = 0;
+    var tails = 0;
+
+    // attach the event handler to the button
+    document.getElementById("flip").addEventListener("click", flipFunction);
+
+    function flipFunction() {
+      if (Math.random() < 0.5) {
+        document.getElementById("coin").src = "images/heads.svg";
+        heads++;
+      } else {
+        document.getElementById("coin").src = "images/tails.svg";
+        tails++;
+      }
+      document.getElementById("num_heads").innerHTML = heads;
+      document.getElementById("num_tails").innerHTML = tails;
+    }
+  </script>
+</body>
+</html>
