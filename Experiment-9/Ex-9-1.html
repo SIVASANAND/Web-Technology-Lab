@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ex 9.1 - Form Validation using AngularJS</title>
+  <title>Exercise 1: User Registration Form Validation</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <style>
     body { font-family: "Times New Roman", serif; color: blue; }
@@ -15,9 +15,10 @@
   </style>
 </head>
 <body ng-app="">
+  <p><b>Exercise 1: User Registration Form Validation</b> | <a href="Ex-9.html">Back</a></p>
   <h1>User Registration Form</h1>
 
-  <form name="regForm" novalidate>
+  <form name="regForm" novalidate ng-submit="submitted = true">
     <table>
       <tr>
         <td>Name<span class="star">*</span></td>
@@ -88,5 +89,6 @@
       </tr>
     </table>
   </form>
+  <h3 ng-show="submitted" style="text-align: center;">Registration successful. Welcome, {{name}}!</h3>
 </body>
 </html>
