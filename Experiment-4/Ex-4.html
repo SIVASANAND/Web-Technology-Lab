@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experiment 4 - Webpage Design using Advanced CSS3</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    /* Advanced CSS3 for the flower shop page, scoped to #shop */
+    #shop {
       font-family: Arial, sans-serif;
-      margin: 0;
+      border: 1px solid #cbd5e1;
     }
 
-    .top { margin: 10px; }
-
     /* Header: multiple backgrounds over a gradient, background-size */
-    header {
+    #shop .shop-header {
       height: 220px;
       background-image: url(images/bouquet.jpg), url(images/flowers-banner.jpg), linear-gradient(to bottom right, #1e3a8a, #3b82f6);
       background-position: 20px 20px, right center, left top;
@@ -21,7 +21,16 @@
       background-size: 130px 175px, 60% auto, cover;
     }
 
-    header p {
+    #shop .shop-header h2 {
+      margin: 0;
+      padding-top: 70px;
+      text-align: center;
+      color: white;
+      font-size: 32px;
+      text-shadow: 3px 3px 6px black;
+    }
+
+    #shop .shop-header p {
       margin: 8px 0 0;
       text-align: center;
       color: white;
@@ -29,72 +38,65 @@
       text-shadow: 2px 2px 4px black;
     }
 
-    header h1 {
-      margin: 0;
-      padding-top: 70px;
-      text-align: center;
-      color: white;
-      text-shadow: 3px 3px 6px black;
-    }
-
     /* Navigation */
-    nav {
-      background-color: gray;
+    #shop .shop-nav {
       display: flex;
+      background-color: gray;
     }
 
-    nav a {
+    #shop .shop-nav a {
       flex: 1;
-      text-align: center;
       padding: 10px;
+      text-align: center;
       color: white;
       text-decoration: none;
     }
 
-    nav a.active { background-color: red; }
-    nav a:hover { background-color: #555; }
+    #shop .shop-nav a.active { background-color: red; }
+    #shop .shop-nav a:hover { background-color: #555; }
 
-    /* Favourites table: rounded corners, border image, nth-child, sibling hover */
-    .fav {
-      background-color: pink;
+    /* Favourites table: rounded corners, box shadow, nth-child, sibling hover */
+    #shop .fav {
       padding: 20px;
+      background-color: pink;
     }
 
-    .box {
-      width: 300px;
+    #shop .box {
+      max-width: 300px;
       margin-left: 20%;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 5px 5px 10px gray;
     }
 
-    table {
+    #shop table {
       width: 100%;
       border-collapse: collapse;
     }
 
-    th {
-      background-color: darkgreen;
-      color: white;
+    #shop th {
       padding: 8px;
+      color: white;
+      background-color: darkgreen;
     }
 
-    td { padding: 8px 20px; }
+    #shop td { padding: 8px 20px; }
 
-    .itemImg img {
+    #shop tr:nth-child(odd) { background-color: greenyellow; }
+    #shop tr:nth-child(even) { background-color: green; color: white; }
+    #shop tr:hover { background-color: gold; color: black; }
+
+    #shop .itemImg { opacity: 0.2; }
+    #shop .itemName:hover + .itemImg { opacity: 1; }
+
+    #shop .itemImg img {
       object-fit: cover;
       border-radius: 50%;
     }
 
-    tr:nth-child(odd) { background-color: greenyellow; }
-    tr:nth-child(even) { background-color: green; color: white; }
-    tr:hover { background-color: gold; color: black; }
-
-    .itemImg { opacity: 0.2; }
-    .itemName:hover + .itemImg { opacity: 1; }
-
-    .note {
-      width: 300px;
+    /* Border image */
+    #shop .note {
+      max-width: 300px;
       margin: 20px 0 0 20%;
       padding: 10px;
       border: 20px solid transparent;
@@ -102,28 +104,29 @@
       background-color: white;
     }
 
-    /* Sign in / sign up forms */
-    .forms {
-      background: radial-gradient(circle, #6b7280, #111827);
-      padding: 40px 10px;
+    /* Sign in / sign up forms: radial gradient, four-value border-radius, shadows */
+    #shop .forms {
+      padding: 30px 10px;
       text-align: center;
+      background: radial-gradient(circle, #6b7280, #111827);
     }
 
-    .card {
+    #shop .form-card {
       display: inline-block;
       vertical-align: top;
       width: 250px;
-      margin: 10px 20px;
+      max-width: 85%;
+      margin: 10px;
       padding: 20px;
-      background-color: white;
       text-align: left;
+      background-color: white;
       border-radius: 15px 50px 30px 5px;
       box-shadow: 0 0 15px black;
     }
 
-    .card h2 { text-align: center; margin-top: 0; }
+    #shop .form-card h3 { margin-top: 0; text-align: center; }
 
-    .card input {
+    #shop .form-card input {
       width: 95%;
       padding: 6px;
       margin: 4px 0 10px;
@@ -132,83 +135,86 @@
       border-radius: 5px;
     }
 
-    .card input:required { border: 3px solid blue; background-color: yellow; }
-    .card input:focus { border: 3px solid red; background-color: lightgreen; }
-    .card input:hover { border-color: purple; }
-    .card input[type="email"]:invalid { color: red; }
-    .card input[type="email"]:valid { color: blue; }
+    #shop .form-card input:required { border: 3px solid blue; background-color: yellow; }
+    #shop .form-card input:focus { border: 3px solid red; background-color: lightgreen; }
+    #shop .form-card input:hover { border-color: purple; }
+    #shop .form-card input[type="email"]:invalid { color: red; }
+    #shop .form-card input[type="email"]:valid { color: blue; }
 
-    .card button {
+    #shop .form-card button {
       width: 100%;
-      padding: 8px;
-      color: white;
       background-color: #0d6efd;
-      border: none;
       border-radius: 25px;
     }
 
-    footer {
-      background-color: bisque;
+    #shop .shop-footer {
       padding: 15px;
       font-style: italic;
+      background-color: bisque;
     }
   </style>
 </head>
 <body>
-  <p class="top" id="top"><b>Experiment 4: Webpage Design using Advanced CSS3</b> | <a href="../index.html">Back to Home</a></p>
+  <main class="container">
+  <a class="back" href="../index.html">&larr; Back to Home</a>
+  <p class="label">Experiment 4</p>
+  <h1>Webpage Design using Advanced CSS3</h1>
 
-  <header>
-    <h1>Flower Gift Shop</h1>
-    <p>Fresh flowers and bouquets delivered across Coimbatore</p>
-  </header>
+  <div id="shop">
+    <header class="shop-header" id="shop-top">
+      <h2>Flower Gift Shop</h2>
+      <p>Fresh flowers and bouquets delivered across Coimbatore</p>
+    </header>
 
-  <nav>
-    <a href="#top" class="active">Home</a>
-    <a href="#favourites">Favourites</a>
-    <a href="#signin">Sign In</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <nav class="shop-nav">
+      <a href="#shop-top" class="active">Home</a>
+      <a href="#favourites">Favourites</a>
+      <a href="#signin">Sign In</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <!-- Favourites: hover an item name to show its image -->
-  <section class="fav" id="favourites">
-    <div class="box">
-    <table>
-      <tr><th colspan="2">Favourites</th></tr>
-      <tr><td class="itemName">Red Rose - Rs. 40</td><td class="itemImg"><img src="images/rose.jpg" alt="Red rose" width="60" height="60"></td></tr>
-      <tr><td class="itemName">Tulip - Rs. 60</td><td class="itemImg"><img src="images/tulip.jpg" alt="Tulip" width="60" height="60"></td></tr>
-      <tr><td class="itemName">Sunflower - Rs. 50</td><td class="itemImg"><img src="images/sunflower.jpg" alt="Sunflower" width="60" height="60"></td></tr>
-      <tr><td class="itemName">White Lily - Rs. 70</td><td class="itemImg"><img src="images/lily.jpg" alt="White lily" width="60" height="60"></td></tr>
-    </table>
-    </div>
-    <p class="note">Our most loved flowers this week. Move the mouse over a flower name to see its picture.</p>
-  </section>
+    <!-- Favourites: hover an item name to show its image -->
+    <section class="fav" id="favourites">
+      <div class="box">
+        <table>
+          <tr><th colspan="2">Favourites</th></tr>
+          <tr><td class="itemName">Red Rose - Rs. 40</td><td class="itemImg"><img src="images/rose.jpg" alt="Red rose" width="60" height="60"></td></tr>
+          <tr><td class="itemName">Tulip - Rs. 60</td><td class="itemImg"><img src="images/tulip.jpg" alt="Tulip" width="60" height="60"></td></tr>
+          <tr><td class="itemName">Sunflower - Rs. 50</td><td class="itemImg"><img src="images/sunflower.jpg" alt="Sunflower" width="60" height="60"></td></tr>
+          <tr><td class="itemName">White Lily - Rs. 70</td><td class="itemImg"><img src="images/lily.jpg" alt="White lily" width="60" height="60"></td></tr>
+        </table>
+      </div>
+      <p class="note">Our most loved flowers this week. Move the mouse over a flower name to see its picture.</p>
+    </section>
 
-  <!-- Sign in and sign up forms with pseudo classes -->
-  <section class="forms" id="signin">
-    <form class="card">
-      <h2>Sign In</h2>
-      <label for="user">Username</label>
-      <input type="text" id="user" placeholder="Enter Username / Email / Phone Number" required>
-      <label for="pass">Password</label>
-      <input type="password" id="pass" placeholder="Enter Password" required>
-      <button type="submit">Sign In</button>
-    </form>
+    <!-- Sign in and sign up forms with pseudo classes -->
+    <section class="forms" id="signin">
+      <form class="form-card">
+        <h3>Sign In</h3>
+        <label for="user">Username</label>
+        <input type="text" id="user" placeholder="Enter Username / Email / Phone Number" required>
+        <label for="pass">Password</label>
+        <input type="password" id="pass" placeholder="Enter Password" required>
+        <button type="submit">Sign In</button>
+      </form>
 
-    <form class="card">
-      <h2>Sign Up</h2>
-      <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Enter Name" required>
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter Email" required>
-      <label for="newpass">Password</label>
-      <input type="password" id="newpass" placeholder="Enter Password" required>
-      <button type="submit">Sign Up</button>
-    </form>
-  </section>
+      <form class="form-card">
+        <h3>Sign Up</h3>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <label for="newpass">Password</label>
+        <input type="password" id="newpass" placeholder="Enter Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
 
-  <footer id="contact">
-    Karunya Nagar, Coimbatore - 641114<br>
-    &copy; 2026 URK24CS9062 - Web Technology Lab. All Rights Reserved.
-  </footer>
+    <footer class="shop-footer" id="contact">
+      Karunya Nagar, Coimbatore - 641114<br>
+      &copy; 2026 URK24CS9062 - Web Technology Lab. All Rights Reserved.
+    </footer>
+  </div>
+  </main>
 </body>
 </html>
