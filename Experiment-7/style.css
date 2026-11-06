@@ -1,0 +1,308 @@
+/* Experiment 5 - shared styles */
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background-color: #f1f5f9;
+  color: #1f2937;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: #1d4ed8;
+}
+
+h1 {
+  margin: 0 0 16px;
+  color: #1e3a8a;
+  font-size: 28px;
+}
+
+/* Centred container used by every page */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 28px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.label {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Form elements */
+fieldset {
+  margin: 0 0 16px;
+  padding: 16px 20px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  line-height: 2.4;
+}
+
+input[type="text"],
+select {
+  padding: 6px 10px;
+  font-size: 15px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+}
+
+input[type="radio"] {
+  margin-left: 8px;
+}
+
+button {
+  padding: 8px 18px;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #1d4ed8;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+/* Output text */
+.container p span,
+#result,
+#answer {
+  color: #047857;
+  font-weight: bold;
+}
+
+/* Exercise 3: fruit grid */
+#garden {
+  margin-top: 16px;
+}
+
+#garden img {
+  margin: 2px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Exercise 5: coin */
+#coin {
+  margin: 8px 0 12px;
+}
+
+/* List page: grid of exercise cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-title {
+  max-width: 1000px;
+  margin: 0 auto 20px;
+}
+
+.card {
+  padding: 18px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.card .num {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card h2 {
+  margin: 4px 0 6px;
+  color: #1e3a8a;
+  font-size: 19px;
+}
+
+.card p {
+  margin: 0 0 14px;
+  color: #475569;
+  font-size: 15px;
+}
+
+.open {
+  display: inline-block;
+  padding: 6px 16px;
+  color: #ffffff;
+  background-color: #1d4ed8;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.open:hover {
+  background-color: #1e40af;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .container { padding: 18px; }
+}
+
+/* Extra rules for Experiment 7 */
+
+/* Exercise 1: budget calculator */
+#budget {
+  text-align: center;
+}
+
+#budget input {
+  width: 80px;
+  margin: 0 12px 10px 4px;
+  padding: 6px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+}
+
+#budget .out {
+  display: inline-block;
+  width: 100px;
+  margin: 15px 6px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+/* Exercise 2: cake shop */
+#cakeshop .title {
+  padding: 5px;
+  color: white;
+  text-align: center;
+  background-color: #c00000;
+}
+
+#cakeshop .cakes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 10px 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+#cakeshop .cakes img {
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#cakeshop h2 {
+  color: #1d4ed8;
+  text-align: center;
+}
+
+#cakeshop label {
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#cakeshop input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 3px 0 8px;
+  padding: 6px 10px;
+  color: #c00000;
+  font-weight: bold;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+}
+
+#cakeshop #order {
+  display: block;
+  width: 160px;
+  margin: 10px auto;
+}
+
+#cakeshop h3 {
+  padding-top: 10px;
+  color: green;
+  text-align: center;
+  border-top: 1px solid #1d4ed8;
+}
+
+#cakeshop .total {
+  padding: 4px 30px;
+  color: white;
+  font-weight: normal;
+  background-color: #28a745;
+}
+
+#cakeshop #price {
+  margin-left: 10px;
+  color: #c00000;
+  font-size: 18px;
+}
+
+/* Exercise 3: car workshop (car drawn with CSS) */
+#workshop {
+  text-align: center;
+}
+
+#workshop .car {
+  position: relative;
+  width: 240px;
+  height: 160px;
+  margin: 20px auto;
+}
+
+#workshop #glass {
+  position: absolute;
+  left: 70px;
+  top: 10px;
+  width: 100px;
+  height: 45px;
+  background: #4ade80;
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+}
+
+#workshop #body {
+  position: absolute;
+  left: 0;
+  top: 55px;
+  width: 240px;
+  height: 50px;
+  background: #84cc16;
+}
+
+#workshop .tyre {
+  position: absolute;
+  top: 85px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #111c44;
+}
+
+#workshop #t1 { left: 25px; }
+#workshop #t2 { left: 150px; }
+
+#workshop button {
+  margin: 5px;
+}

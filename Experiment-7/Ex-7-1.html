@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 1: Budget Calculator</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <style>
-    body { font-family: "Times New Roman", serif; text-align: center; }
-    h1 { background: black; color: white; padding: 8px; }
-    input { width: 70px; margin: 0 15px 10px 5px; }
-    button { background: navy; color: white; padding: 8px 12px; border: none; }
-    .out { display: inline-block; width: 90px; padding: 10px; margin: 15px 8px; color: white; font-size: 13px; }
-  </style>
 </head>
 <body>
-  <p><b>Exercise 1: Budget Calculator</b> | <a href="Ex-7.html">Back</a></p>
+  <main class="container" id="budget">
+  <a class="back" href="Ex-7.html">&larr; Back</a>
+  <p class="label">Exercise 1</p>
   <h1>Budget Calculator App</h1>
   <p><b>Enter Amount that you want to Manage</b></p>
   <input type="number" id="amount" value="15000">
@@ -30,6 +26,8 @@
   <div class="out" style="background: green;">Accessories<br><span id="o-acc"></span></div>
   <div class="out" style="background: blue;">Emergency<br><span id="o-emg"></span></div>
   <div class="out" style="background: deeppink;">Saving<br><span id="o-save"></span></div>
+
+  </main>
 
   <script>
     $(document).ready(function () {
