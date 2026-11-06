@@ -6,8 +6,8 @@
 
 | # | Exercise | Live |
 |---|----------|------|
-| 1 | [User Registration Form Validation](Ex-9-1.html) | [Open](https://sivasanand.github.io/Web-Technology-Lab/Experiment-9/Ex-9-1.html) |
-| 2 | [Cafe Website using AngularJS Routing](Ex-9-2.html) | [Open](https://sivasanand.github.io/Web-Technology-Lab/Experiment-9/Ex-9-2.html) |
+| 1 | [User Registration Form](Ex-9-1.html) | [Open](https://sivasanand.github.io/Web-Technology-Lab/Experiment-9/Ex-9-1.html) |
+| 2 | [Cafe Website](Ex-9-2.html) | [Open](https://sivasanand.github.io/Web-Technology-Lab/Experiment-9/Ex-9-2.html) |
 
 The cafe website loads its four pages (Home, Menu, Gallery, Contact) from `pages/` with ngRoute, so open it through a web server or the live link.
 

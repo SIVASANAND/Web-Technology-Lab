@@ -4,18 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 1: User Registration Form Validation</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <style>
-    body { font-family: "Times New Roman", serif; color: blue; }
-    h1 { text-align: center; }
-    table { margin: auto; }
-    td { padding: 8px 15px; vertical-align: top; }
-    .star { color: red; }
-    .error { color: red; font-size: 13px; display: block; }
-  </style>
 </head>
 <body ng-app="">
-  <p><b>Exercise 1: User Registration Form Validation</b> | <a href="Ex-9.html">Back</a></p>
+  <main class="container" id="register">
+  <a class="back" href="Ex-9.html">&larr; Back</a>
+  <p class="label">Exercise 1</p>
   <h1>User Registration Form</h1>
 
   <form name="regForm" novalidate ng-submit="submitted = true">
@@ -90,5 +85,7 @@
     </table>
   </form>
   <h3 ng-show="submitted" style="text-align: center;">Registration successful. Welcome, {{name}}!</h3>
+  </main>
+
 </body>
 </html>

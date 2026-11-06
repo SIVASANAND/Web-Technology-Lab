@@ -4,16 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercise 2: Cafe Website using AngularJS Routing</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; }
-    header { background: #166534; color: white; padding: 10px 20px; }
-    nav { background: #dcfce7; padding: 10px 20px; }
-    nav a { margin-right: 15px; color: #166534; font-weight: bold; }
-    .page { padding: 20px; }
-    footer { background: #166534; color: white; text-align: center; padding: 8px; }
-  </style>
   <script>
     var app = angular.module("cafeApp", ["ngRoute"]);
 
@@ -35,8 +28,10 @@
   </script>
 </head>
 <body ng-app="cafeApp">
-  <p><b>Exercise 2: Cafe Website using AngularJS Routing</b> | <a href="Ex-9.html">Back</a></p>
-  <header><h1>Green Leaf Cafe</h1></header>
+  <main class="container" id="cafe">
+  <a class="back" href="Ex-9.html">&larr; Back</a>
+  <p class="label">Exercise 2</p>
+  <h1>Green Leaf Cafe</h1>
   <nav>
     <a href="#!/">Home</a>
     <a href="#!/menu">Menu</a>
@@ -46,6 +41,8 @@
 
   <div class="page" ng-view></div>
 
-  <footer>&copy; 2026 Sivasanand | URK24CS9062</footer>
+  <footer>Green Leaf Cafe, Karunya Nagar, Coimbatore &middot; &copy; 2026 URK24CS9062</footer>
+  </main>
+
 </body>
 </html>
