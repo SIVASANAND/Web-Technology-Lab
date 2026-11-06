@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="100" viewBox="0 0 260 100">
-  <rect x="10" y="10" width="240" height="80" rx="8" fill="#2563eb"/>
-  <text x="130" y="60" font-family="Arial" font-size="22" fill="#fff" text-anchor="middle">CSS3 Banner</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <g fill="#2f6f73">
+    <circle cx="80" cy="60" r="25"/><rect x="55" y="90" width="50" height="110" rx="10"/>
+    <circle cx="150" cy="50" r="25"/><rect x="125" y="80" width="50" height="120" rx="10"/>
+    <circle cx="220" cy="60" r="25"/><rect x="195" y="90" width="50" height="110" rx="10"/>
+  </g>
 </svg>

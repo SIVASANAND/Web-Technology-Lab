@@ -3,50 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ex 3 - Responsive Webpage using HTML5 and CSS3</title>
+  <title>Exercise 1: Responsive Profile Page using CSS3</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Tech News</h1>
-    <p>Responsive page using CSS3</p>
-  </header>
+  <p class="top"><b>Exercise 1: Responsive Profile Page using CSS3</b> | <a href="Ex-3.html">Back</a></p>
 
-  <nav>
-    <a href="#flow">Normal Flow</a>
-    <a href="#multi">Multicolumn</a>
-    <a href="#topics">Topics</a>
-  </nav>
+  <div class="page">
+    <!-- Header -->
+    <header>
+      <img src="photo.svg" alt="Profile photo" class="photo">
+      <span class="social"><a href="#">f</a> <a href="#">t</a> <a href="#">g+</a></span>
+      <h1>Mr. Sivasanand</h1>
+    </header>
 
-  <section class="banner"></section>
+    <!-- Navigation -->
+    <nav>
+      <a href="#personal">Personal</a>
+      <a href="#academic">Academic</a>
+      <a href="#activity">Activity</a>
+      <a href="#others">Others</a>
+    </nav>
 
-  <section id="flow">
-    <h2>Normal Flow Layout</h2>
-    <p>Block elements are placed one below the other. Inline elements like <b>this</b> and <i>this</i> stay on the same line.</p>
-    <div class="box">Box 1 (block)</div>
-    <div class="box">Box 2 (block)</div>
-  </section>
+    <!-- About section with background image -->
+    <section id="personal" class="hero">
+      <div class="about">
+        <p>I am a computer science student who enjoys building web pages.</p>
+        <ul>
+          <li>Reading books</li>
+          <li>Playing chess</li>
+          <li>Web design</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="multi">
-    <h2>Multicolumn Layout</h2>
-    <div class="columns">
-      <p class="big">Web technology is used to build websites.</p>
-      <p>HTML gives the structure of a page. CSS adds colors, fonts, spacing and layout. JavaScript makes the page interactive. Together they are used to create every website we see on the internet.</p>
-      <p>CSS3 adds new features like multicolumn layout, shadows, rounded corners and media queries. Media queries help a page look good on mobiles, tablets and desktops.</p>
-    </div>
-  </section>
+    <!-- Skills -->
+    <section id="academic" class="skills">
+      <div class="tile html">HTML<span>HTML5</span></div>
+      <div class="tile css">CSS<span>CSS3</span></div>
+      <div class="tile js">JS<span>Javascript</span></div>
+      <div class="tile php">php<span>PHP</span></div>
+    </section>
 
-  <section id="topics">
-    <h2>Topics Covered</h2>
-    <ul>
-      <li>Margin and padding</li>
-      <li>Text and font properties</li>
-      <li>Background color and image</li>
-      <li>Link styles and display</li>
-      <li>List style, height and width</li>
-    </ul>
-  </section>
+    <!-- Family: multicolumn layout -->
+    <section id="activity" class="family">
+      <div class="member">
+        <div class="circle">F</div>
+        <h3>Mr. Father's Name</h3>
+        <p>It was my father who taught me to value myself.</p>
+      </div>
+      <div class="member">
+        <div class="circle mother">M</div>
+        <h3>Mrs. Mother's Name</h3>
+        <p>My mother taught me that we all have the power to achieve our dreams.</p>
+      </div>
+      <div class="member">
+        <div class="circle">S</div>
+        <h3>Sis / Bro Name</h3>
+        <p>A sister is both your mirror and your opposite.</p>
+      </div>
+    </section>
 
-  <footer>&copy; 2026 Sivasanand | URK24CS9062</footer>
+    <!-- Footer -->
+    <footer id="others">
+      <p class="address">Karunya Nagar, Coimbatore - 641114</p>
+      <p>&copy; 2026 URK24CS9062 - Web Technology Lab. All Rights Reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
