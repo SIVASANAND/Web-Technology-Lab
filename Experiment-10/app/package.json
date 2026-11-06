@@ -1,0 +1,14 @@
+{
+  "name": "experiment-10-node-mongodb",
+  "version": "1.0.0",
+  "description": "User registration form handled by Node.js and stored in MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Sivasanand (URK24CS9062)",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^6.8.0"
+  }
+}
