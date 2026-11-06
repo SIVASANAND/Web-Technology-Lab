@@ -4,16 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experiment 1 - Simple Web Design using HTML</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 30px; }
-    li { margin: 10px 0; }
-  </style>
 </head>
 <body>
-  <h1>Experiment 1: Simple Web Design using HTML</h1>
-  <ul>
-    <li><a href="Ex-1-1.html">Exercise 1 - Simple Web Page using HTML</a></li>
-  </ul>
-  <p><a href="../index.html">Home</a></p>
+  <p><b>Experiment 1: Simple Web Design using HTML</b> | <a href="../index.html">Back to Home</a></p>
+
+  <!-- Header -->
+  <header>
+    <h1 style="text-align: center;">Department of Computer Science and Engineering</h1>
+    <nav style="text-align: center;">
+      <a href="#sub1">About</a> |
+      <a href="#sub2">Academics</a> |
+      <a href="#links">Links</a>
+    </nav>
+    <hr>
+  </header>
+
+  <!-- Section 1: text, contact links and clickable image -->
+  <section>
+    <h1>About the Department</h1>
+    <h3 id="sub1">Our Vision</h3>
+    <div>
+      <p>
+        The <em>Department of Computer Science and Engineering</em> at Karunya University trains
+        students in <mark>programming, web technology, data science</mark> and software engineering.
+        <span style="color: red;">Every course combines classroom teaching with hands-on lab work.</span>
+        Students build real projects and take part in coding contests every semester.
+      </p>
+      <p>
+        <abbr title="HyperText Markup Language">HTML</abbr> is the first language taught in the web lab.
+        Water is H<sub>2</sub>O and 2<sup>10</sup> = 1024.
+        The tag <code>&lt;p&gt;</code> makes a paragraph &amp; &copy; is the copyright sign.
+      </p>
+      <blockquote>
+        "The Web is for everyone." &mdash; <cite>Tim Berners-Lee</cite>
+      </blockquote>
+      <pre>
+Lab timings :  9.00 AM  -  4.30 PM
+Lab block   :  Second floor, CSE block
+      </pre>
+      <p>
+        <a href="mailto:info@karunya.edu">E-MAIL</a><br>
+        <a href="tel:18008899888">Phone.no</a>
+      </p>
+      <p>
+        <a href="https://www.karunya.edu/" target="_blank">
+          <img src="images/campus.jpg" alt="Karunya University campus" width="240" height="160">
+        </a>
+        Clickable Image (opens the university website)
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: table with rowspan / colspan and nested lists -->
+  <section>
+    <h1>Academics</h1>
+    <h3 id="sub2">Weekly Lab Timetable</h3>
+    <table border="1" cellpadding="5" style="margin: auto;">
+      <caption>II Year CSE - Lab Timetable</caption>
+      <tr>
+        <td>Monday</td>
+        <td>Web Technology Lab</td>
+        <td>Data Structures Lab</td>
+        <td rowspan="4">Lunch Break<br>12.30 - 1.30</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td rowspan="3" colspan="2" style="text-align: center;">Mini Project Work<br>(Tuesday to Thursday)</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;">Friday - Seminar</td>
+        <td colspan="2" style="text-align: center;">Friday - Sports</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: center;">Saturday - Library and Self Study</td>
+      </tr>
+    </table>
+
+    <p>Courses in the first year:</p>
+    <ul>
+      <li>Semester 1
+        <ol>
+          <li>Programming in C</li>
+          <li>Engineering Mathematics
+            <ul type="square">
+              <li>Calculus</li>
+              <li>Linear Algebra
+                <ol type="A">
+                  <li>Matrices</li>
+                  <li>Vector Spaces</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li>Semester 2 - Data Structures</li>
+      <li>Semester 2 - Digital Logic</li>
+    </ul>
+
+    <dl>
+      <dt>HTML</dt>
+      <dd>Gives the structure of a web page.</dd>
+      <dt>CSS</dt>
+      <dd>Gives the style of a web page.</dd>
+    </dl>
+  </section>
+
+  <!-- Section 3: link targets -->
+  <section id="links">
+    <p>Click any of the following links</p>
+    <a href="https://www.w3schools.com/html/" target="_blank">Opens in New</a> |
+    <a href="https://www.w3schools.com/html/" target="_self">Opens in Self</a> |
+    <a href="https://www.w3schools.com/html/" target="_parent">Opens in Parent</a> |
+    <a href="https://www.w3schools.com/html/" target="_top">Opens in Body</a>
+  </section>
+
+  <!-- Footer with bookmark links -->
+  <footer>
+    <hr>
+    <a href="#sub1">Go to Our Vision</a> | <a href="#sub2">Go to Lab Timetable</a>
+  </footer>
 </body>
 </html>

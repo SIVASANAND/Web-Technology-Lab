@@ -4,16 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experiment 3 - Responsive Webpage using HTML5 and CSS3</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 30px; }
-    li { margin: 10px 0; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Experiment 3: Responsive Webpage using HTML5 and CSS3</h1>
-  <ul>
-    <li><a href="Ex-3-1.html">Exercise 1 - Responsive Profile Page using CSS3</a></li>
-  </ul>
-  <p><a href="../index.html">Home</a></p>
+  <p class="top"><b>Experiment 3: Responsive Webpage using HTML5 and CSS3</b> | <a href="../index.html">Back to Home</a></p>
+
+  <div class="page">
+    <!-- Header -->
+    <header>
+      <img src="images/profile.jpg" alt="Profile photo" class="photo">
+      <span class="social"><a href="https://github.com/SIVASANAND" target="_blank">GitHub</a></span>
+      <h1>Mr. Sivasanand</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+      <a href="#personal">Personal</a>
+      <a href="#academic">Academic</a>
+      <a href="#activity">Inspiration</a>
+      <a href="#others">Contact</a>
+    </nav>
+
+    <!-- About section with background image -->
+    <section id="personal" class="hero">
+      <div class="about">
+        <p>I am a B.Tech Computer Science student at Karunya University, Coimbatore.
+           I like building websites and learning new programming languages.</p>
+        <ul>
+          <li>Reading tech blogs</li>
+          <li>Playing chess</li>
+          <li>Designing web pages</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="academic" class="skills">
+      <div class="tile"><img src="images/html5.png" alt="HTML5 logo"><span>HTML5</span></div>
+      <div class="tile"><img src="images/css3.png" alt="CSS3 logo"><span>CSS3</span></div>
+      <div class="tile"><img src="images/javascript.png" alt="JavaScript logo"><span>Javascript</span></div>
+      <div class="tile"><img src="images/php.png" alt="PHP logo"><span>PHP</span></div>
+    </section>
+
+    <!-- People who inspire me: multicolumn layout -->
+    <section id="activity" class="family">
+      <div class="member">
+        <img src="images/kalam.jpg" alt="Dr. A. P. J. Abdul Kalam" class="circle">
+        <h3>Dr. A. P. J. Abdul Kalam</h3>
+        <p>Scientist and former President of India who taught me to dream big and work hard.</p>
+      </div>
+      <div class="member">
+        <img src="images/lovelace.jpg" alt="Ada Lovelace" class="circle hover-show">
+        <h3>Ada Lovelace</h3>
+        <p>Wrote the first computer program in the 1840s. Move the mouse over the circle to see her picture.</p>
+      </div>
+      <div class="member">
+        <img src="images/berners-lee.jpg" alt="Tim Berners-Lee" class="circle">
+        <h3>Tim Berners-Lee</h3>
+        <p>Invented the World Wide Web and the first web browser in 1990.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="others">
+      <p class="address">Karunya Nagar, Coimbatore - 641114, Tamil Nadu</p>
+      <p>&copy; 2026 URK24CS9062 - Web Technology Lab. All Rights Reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>

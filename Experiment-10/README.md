@@ -2,11 +2,9 @@
 
 **Aim:** Create a Node.js server that shows a user registration form, stores the submitted details in MongoDB and displays them in a table.
 
-## Exercises
+## Solution
 
-| # | Exercise | Live |
-|---|----------|------|
-| 1 | [User Registration with Node.js and MongoDB](Ex-10-1.html) | [Open](https://sivasanand.github.io/Web-Technology-Lab/Experiment-10/Ex-10-1.html) |
+[Ex-10.html](Ex-10.html) - opens the working page directly.
 
 ## Node.js App
 
@@ -21,7 +19,7 @@ node app.js
 
 Start MongoDB on `mongodb://localhost:27017` first, then open http://localhost:6000. Browsers block port 6000, so if it does not open use another port: `$env:PORT=3000; node app.js` (PowerShell) and open http://localhost:3000.
 
-The exercise page above is a browser version of the same form and result table, since GitHub Pages cannot run Node.js.
+The solution page above is a browser version of the same form and result table, since GitHub Pages cannot run Node.js.
 
 ## Live Link
 
