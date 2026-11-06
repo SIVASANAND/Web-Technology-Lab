@@ -1,0 +1,8 @@
+<h2>Contact Us</h2>
+<form name="contactForm" ng-submit="send()">
+  Name: <br><input type="text" ng-model="cname" required><br><br>
+  Email: <br><input type="email" ng-model="cemail" required><br><br>
+  Message: <br><textarea ng-model="cmsg" rows="4" cols="30" required></textarea><br><br>
+  <button type="submit">Send</button>
+</form>
+<p ng-show="sent">Thank you {{cname}}, we will reply to {{cemail}} soon.</p>

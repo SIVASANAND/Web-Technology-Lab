@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 9.2 - Green Leaf Cafe (AngularJS Routing)</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; }
+    header { background: #166534; color: white; padding: 10px 20px; }
+    nav { background: #dcfce7; padding: 10px 20px; }
+    nav a { margin-right: 15px; color: #166534; font-weight: bold; }
+    .page { padding: 20px; }
+    footer { background: #166534; color: white; text-align: center; padding: 8px; }
+  </style>
+  <script>
+    var app = angular.module("cafeApp", ["ngRoute"]);
+
+    app.config(function ($routeProvider) {
+      $routeProvider
+        .when("/", { templateUrl: "pages/home.htm" })
+        .when("/menu", { templateUrl: "pages/menu.htm" })
+        .when("/gallery", { templateUrl: "pages/gallery.htm" })
+        .when("/contact", { templateUrl: "pages/contact.htm", controller: "contactCtrl" })
+        .otherwise({ redirectTo: "/" });
+    });
+
+    app.controller("contactCtrl", function ($scope) {
+      $scope.sent = false;
+      $scope.send = function () {
+        $scope.sent = true;
+      };
+    });
+  </script>
+</head>
+<body ng-app="cafeApp">
+  <header><h1>Green Leaf Cafe</h1></header>
+  <nav>
+    <a href="#!/">Home</a>
+    <a href="#!/menu">Menu</a>
+    <a href="#!/gallery">Gallery</a>
+    <a href="#!/contact">Contact</a>
+  </nav>
+
+  <div class="page" ng-view></div>
+
+  <footer>&copy; 2026 Sivasanand | URK24CS9062</footer>
+</body>
+</html>
