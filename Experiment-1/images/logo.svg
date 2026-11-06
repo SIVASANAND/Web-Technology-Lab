@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 200 120">
+  <rect width="200" height="120" rx="10" fill="#1e3a8a"/>
+  <text x="100" y="55" font-family="Arial" font-size="22" fill="#fff" text-anchor="middle">Web Tech</text>
+  <text x="100" y="85" font-family="Arial" font-size="16" fill="#facc15" text-anchor="middle">&lt;HTML5&gt;</text>
+</svg>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 1 - Simple Web Design using HTML</title>
+</head>
+<body>
+  <!-- Header section -->
+  <header id="top">
+    <h1>My College Department</h1>
+    <p>Simple web page using HTML5 elements - Sivasanand (URK24CS9062)</p>
+  </header>
+
+  <!-- Navigation with bookmark links -->
+  <nav>
+    <a href="#about">About</a> |
+    <a href="#courses">Courses</a> |
+    <a href="#timetable">Timetable</a> |
+    <a href="#links">Links</a>
+  </nav>
+  <hr>
+
+  <section id="about">
+    <h2>About</h2>
+    <div>
+      <img src="images/logo.svg" alt="Web Technology logo" width="200" height="120">
+      <p>
+        The department teaches <abbr title="HyperText Markup Language">HTML</abbr>,
+        <abbr title="Cascading Style Sheets">CSS</abbr> and JavaScript.
+        Students learn to build <em>clean</em> and <mark>standard</mark> web pages.
+        <span style="color: blue;">This text is inside a span.</span>
+      </p>
+      <p>Water is H<sub>2</sub>O and 2<sup>3</sup> = 8.</p>
+      <p>To write a tag use entities: &lt;p&gt; &amp; &copy; 2026</p>
+      <p>Use the <code>&lt;table&gt;</code> tag to create a table.</p>
+      <blockquote>
+        "The Web is for everyone." - <cite>Tim Berners-Lee</cite>
+      </blockquote>
+      <pre>
+Preformatted text
+    keeps   spaces
+  and line breaks
+      </pre>
+    </div>
+  </section>
+
+  <section id="courses">
+    <h2>Courses</h2>
+    <h3>Unordered list</h3>
+    <ul type="square">
+      <li>Web Technology</li>
+      <li>Data Structures</li>
+      <li>Operating Systems</li>
+    </ul>
+    <h3>Ordered list</h3>
+    <ol type="I">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ol>
+    <h3>Definition list</h3>
+    <dl>
+      <dt>HTML</dt>
+      <dd>Structure of a web page.</dd>
+      <dt>CSS</dt>
+      <dd>Style of a web page.</dd>
+    </dl>
+  </section>
+
+  <section id="timetable">
+    <h2>Timetable</h2>
+    <table border="1" cellpadding="6">
+      <caption>Weekly Timetable</caption>
+      <tr>
+        <th>Day</th>
+        <th>9 - 10</th>
+        <th>10 - 11</th>
+        <th>11 - 12</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td colspan="2">Web Technology Lab</td>
+        <td>Maths</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>DS</td>
+        <td rowspan="2">OS</td>
+        <td>English</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Maths</td>
+        <td>DS</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="links">
+    <h2>Links</h2>
+    <p>Click any of the following links</p>
+    <a href="https://developer.mozilla.org/" target="_blank">Opens in New</a> |
+    <a href="https://developer.mozilla.org/" target="_self">Opens in Self</a> |
+    <a href="https://developer.mozilla.org/" target="_parent">Opens in Parent</a> |
+    <a href="https://developer.mozilla.org/" target="_top">Opens in Body</a>
+    <p><a href="#top">Back to top</a></p>
+  </section>
+
+  <hr>
+  <!-- Footer section -->
+  <footer>
+    <p>&copy; 2026 Sivasanand | URK24CS9062</p>
+  </footer>
+</body>
+</html>
