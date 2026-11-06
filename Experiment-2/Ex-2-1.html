@@ -3,77 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ex 2.1 - HTML5 Form Elements</title>
+  <title>Exercise 1: Profile Page with HTML5 Form and Media Elements</title>
 </head>
 <body>
-  <!-- Page 1 of the website: form elements -->
-  <h1>Student Registration</h1>
-  <p><a href="Ex-2-1.html">Registration Form</a> | <a href="Ex-2-2.html">Media Gallery</a></p>
+  <p><b>Exercise 1: Profile Page with HTML5 Form and Media Elements</b> | <a href="Ex-2.html">Back</a></p>
 
-  <form action="#" method="get">
-    <fieldset>
-      <legend>Personal Details</legend>
-      <label for="fname">First name:</label>
-      <input type="text" id="fname" name="fname" required><br><br>
-      <label for="lname">Last name:</label>
-      <input type="text" id="lname" name="lname"><br><br>
-      <label for="pwd">Password:</label>
-      <input type="password" id="pwd" name="pwd"><br><br>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email"><br><br>
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone"><br><br>
-      <label for="dob">Date of birth:</label>
-      <input type="date" id="dob" name="dob"><br><br>
-      Gender:
-      <label><input type="radio" name="gender" value="male"> Male</label>
-      <label><input type="radio" name="gender" value="female"> Female</label>
-      <input type="hidden" name="regno" value="URK24CS9062">
-    </fieldset>
-    <br>
+  <!-- The whole page is laid out with a table -->
+  <table width="100%" cellpadding="10" style="border: 1px solid #999;">
+    <!-- Header: photo and name -->
+    <tr>
+      <td><img src="media/profile.svg" alt="Profile photo" width="120" height="120"></td>
+      <td><h1>Mr. Sivasanand</h1></td>
+    </tr>
 
-    <fieldset>
-      <legend>Course Details</legend>
-      <label for="dept">Department:</label>
-      <select id="dept" name="dept">
-        <option value="cse">CSE</option>
-        <option value="ece">ECE</option>
-        <option value="eee">EEE</option>
-        <option value="mech">Mechanical</option>
-      </select><br><br>
-      Subjects:
-      <label><input type="checkbox" name="sub" value="web"> Web Tech</label>
-      <label><input type="checkbox" name="sub" value="ds"> Data Structures</label><br><br>
-      <label for="year">Year of joining:</label>
-      <input type="number" id="year" name="year" min="2020" max="2030"><br><br>
-      <label for="month">Start month:</label>
-      <input type="month" id="month" name="month"><br><br>
-      <label for="week">Week:</label>
-      <input type="week" id="week" name="week"><br><br>
-      <label for="time">Class time:</label>
-      <input type="time" id="time" name="time"><br><br>
-      <label for="meet">Meeting:</label>
-      <input type="datetime-local" id="meet" name="meet"><br><br>
-      <label for="site">Website:</label>
-      <input type="url" id="site" name="site"><br><br>
-      <label for="search">Search:</label>
-      <input type="search" id="search" name="search"><br><br>
-      <label for="level">Skill level:</label>
-      <input type="range" id="level" name="level" min="0" max="10"><br><br>
-      <label for="photo">Photo:</label>
-      <input type="file" id="photo" name="photo"><br><br>
-      <label for="addr">Address:</label><br>
-      <textarea id="addr" name="addr" rows="4" cols="40"></textarea>
-    </fieldset>
-    <br>
+    <!-- Navigation and search -->
+    <tr>
+      <td colspan="2" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+        <a href="#academics">Academics</a> &nbsp;&nbsp;&nbsp;
+        <a href="#achievements">Achievements</a> &nbsp;&nbsp;&nbsp;
+        <a href="#friends">Friends</a> &nbsp;&nbsp;&nbsp;
+        <input type="search" placeholder="search...">
+      </td>
+    </tr>
 
-    <label for="prog">Form progress:</label>
-    <progress id="prog" value="70" max="100">70%</progress><br><br>
+    <!-- Skills (progress) and media (video, audio) -->
+    <tr>
+      <td>
+        <label for="ps">Photoshop:</label><br><progress id="ps" value="60" max="100"></progress><br>
+        <label for="java">Java:</label><br><progress id="java" value="80" max="100"></progress><br>
+        <label for="cpp">C++:</label><br><progress id="cpp" value="70" max="100"></progress><br>
+        <label for="php">PHP:</label><br><progress id="php" value="30" max="100"></progress><br>
+        <label for="js">Javascript:</label><br><progress id="js" value="50" max="100"></progress>
+      </td>
+      <td>
+        <video width="320" controls>
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <br>
+        <audio controls>
+          <source src="media/tone.wav" type="audio/wav">
+          Your browser does not support the audio tag.
+        </audio>
+      </td>
+    </tr>
 
-    <input type="submit" value="Submit">
-    <input type="reset" value="Reset">
-    <input type="button" value="Button" onclick="alert('Button clicked')">
-    <input type="image" src="media/banner.svg" alt="Submit image" width="90">
-  </form>
+    <!-- Registration form -->
+    <tr>
+      <td colspan="2">
+        <form action="Ex-2-1.html" method="get">
+          <table width="100%">
+            <tr>
+              <td valign="top">
+                <fieldset>
+                  <legend>Personal Information</legend>
+                  <label for="uname">User name:</label>
+                  <input type="text" id="uname" name="uname" placeholder="Enter the user name" required> *<br><br>
+                  <label for="pwd">Password:</label>
+                  <input type="password" id="pwd" name="pwd" placeholder="Maxlength-10" maxlength="10" required> *<br><br>
+                  <label for="regno">Reg. No:</label>
+                  <input type="text" id="regno" name="regno" placeholder="URK24CS9062" pattern="[A-Z]{3}[0-9]{2}[A-Z]{2}[0-9]{4}" required> *<br><br>
+                  <label for="age">Age:</label>
+                  <input type="number" id="age" name="age" placeholder="19-24" min="19" max="24" required> *<br><br>
+                  Gender:<br>
+                  <input type="radio" id="male" name="gender" value="Male" required> <label for="male">Male</label>
+                  <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label><br><br>
+                  <label for="dob">DOB:</label>
+                  <input type="date" id="dob" name="dob" required> *<br><br>
+                  <label for="color">Favorite Color:</label>
+                  <input type="color" id="color" name="color"><br><br>
+                  <label for="photo">Change Profile Photo:</label>
+                  <input type="file" id="photo" name="photo" accept="image/*">
+                  <input type="hidden" name="batch" value="Web Technology Lab">
+                </fieldset>
+              </td>
+              <td valign="top">
+                <fieldset>
+                  <legend>Contact Information</legend>
+                  <label for="addr">Address:</label><br>
+                  <textarea id="addr" name="addr" rows="3" cols="40"></textarea><br><br>
+                  <label for="state">State:</label>
+                  <select id="state" name="state">
+                    <option value="">Select</option>
+                    <option>Tamil Nadu</option>
+                    <option>Kerala</option>
+                    <option>Karnataka</option>
+                    <option>Andhra Pradesh</option>
+                  </select><br><br>
+                  <label for="zip">Zipcode:</label>
+                  <input type="text" id="zip" name="zip" placeholder="only 6 numbers" pattern="[0-9]{6}" required> *<br><br>
+                  <label for="mobile">Mobile:</label>
+                  <input type="tel" id="mobile" name="mobile" placeholder="(+91)99999-99999" pattern="[0-9]{10}" required> *<br><br>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="valid email" required> *<br><br>
+                  <label for="url">URL:</label>
+                  <input type="url" id="url" name="url" placeholder="valid url" required> *<br><br>
+                  <input type="checkbox" id="verified" name="verified" required> <label for="verified">I verified</label><br><br>
+                  <input type="submit" value="Submit">
+                  <input type="reset" value="Reset">
+                </fieldset>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </td>
+    </tr>
+
+    <!-- Embedded PDF and Google map -->
+    <tr>
+      <td>
+        <embed src="Experiment-2-Question.pdf" type="application/pdf" width="420" height="300">
+      </td>
+      <td>
+        <iframe src="https://maps.google.com/maps?q=Karunya%20University%20Coimbatore&amp;output=embed"
+                width="420" height="300" style="border: 0;" title="Karunya University map"></iframe>
+      </td>
+    </tr>
+
+    <!-- Academics, achievements, friends -->
+    <tr>
+      <td colspan="2">
+        <h2 id="academics">Academics</h2>
+        <table border="1" cellpadding="5">
+          <tr><th>Course</th><th>Institution</th><th>Year</th><th>Score</th></tr>
+          <tr><td>B.Tech CSE</td><td>Karunya University</td><td>2024 - 2028</td><td>8.5 CGPA</td></tr>
+          <tr><td>HSC</td><td>Higher Secondary School</td><td>2024</td><td>90%</td></tr>
+          <tr><td>SSLC</td><td>High School</td><td>2022</td><td>92%</td></tr>
+        </table>
+
+        <h2 id="achievements">Achievements</h2>
+        <div>
+          <p>First prize in college web design contest.</p>
+          <p>Completed an online course on HTML5 and CSS3.</p>
+        </div>
+
+        <h2 id="friends">Friends</h2>
+        <p>Arun, Bala, Charles, Deepa</p>
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td colspan="2" style="border-top: 1px solid #999;">
+        Karunya Nagar, Coimbatore, Tamil Nadu - 641114<br>
+        &copy; 2026 URK24CS9062 - Web Technology Lab. All Rights Reserved.
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
