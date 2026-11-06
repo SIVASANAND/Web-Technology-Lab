@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 6.5 - Array of Student Objects</title>
+</head>
+<body>
+  <h1>Student Details</h1>
+  <div id="list"></div>
+  <h2>Born before 2000</h2>
+  <ul id="before"></ul>
+  <h2>Born in or after 2000</h2>
+  <ul id="after"></ul>
+
+  <script>
+    // array of objects
+    var students = [
+      { name: "John", regno: "UR13CS129", yob: 1995 },
+      { name: "Joseph", regno: "UR13CS130", yob: 1998 },
+      { name: "Priya", regno: "URK24CS1001", yob: 2005 },
+      { name: "Arun", regno: "URK24CS1002", yob: 2006 }
+    ];
+
+    var list = "";
+    var before = "";
+    var after = "";
+
+    for (var i = 0; i < students.length; i++) {
+      list += "<p>" + students[i].name + "'s Register Number is " + students[i].regno + "</p>";
+
+      if (students[i].yob < 2000) {
+        before += "<li>" + students[i].name + " (" + students[i].yob + ")</li>";
+      } else {
+        after += "<li>" + students[i].name + " (" + students[i].yob + ")</li>";
+      }
+    }
+
+    document.getElementById("list").innerHTML = list;
+    document.getElementById("before").innerHTML = before;
+    document.getElementById("after").innerHTML = after;
+  </script>
+</body>
+</html>

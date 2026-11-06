@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 6.1 - Digital Clock</title>
+</head>
+<body>
+  <h1>Digital Clock!</h1>
+  <h2><span id="time"></span></h2>
+
+  <script>
+    function twoDigits(n) {
+      return n < 10 ? "0" + n : n;
+    }
+
+    function display() {
+      var d = new Date();
+      var h = twoDigits(d.getHours());
+      var m = twoDigits(d.getMinutes());
+      var s = twoDigits(d.getSeconds());
+      document.getElementById("time").innerHTML = h + ":" + m + ":" + s;
+    }
+
+    display();
+    setInterval(display, 1000); // call display every one second
+  </script>
+</body>
+</html>

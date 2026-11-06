@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 6.2 - Dynamic Background</title>
+</head>
+<body>
+  <h1>Dynamic Background!</h1>
+  <p>The background colour changes every 30 seconds.</p>
+  <p>Current colour: <span id="color"></span></p>
+
+  <script>
+    function setBackgroundColor() {
+      var red = Math.floor(Math.random() * 255);
+      var green = Math.floor(Math.random() * 255);
+      var blue = Math.floor(Math.random() * 255);
+      var color = "rgb(" + red + "," + green + "," + blue + ")";
+      document.getElementsByTagName("body")[0].style.backgroundColor = color;
+      document.getElementById("color").innerHTML = color;
+    }
+
+    setBackgroundColor();
+    setInterval(setBackgroundColor, 30000); // every 30 seconds
+  </script>
+</body>
+</html>

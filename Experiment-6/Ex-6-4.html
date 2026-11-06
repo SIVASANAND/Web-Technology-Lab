@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 6.4 - Moving Car</title>
+</head>
+<body>
+  <h1>Moving Car</h1>
+  <button onclick="moveRight()">Move</button>
+  <button onclick="stop()">Stop</button>
+  <br><br>
+  <img id="car" src="images/car.svg" alt="car" width="140" height="70">
+
+  <script>
+    var imgObj;
+    var animate;
+
+    function init() {
+      imgObj = document.getElementById("car");
+      imgObj.style.position = "absolute";
+      imgObj.style.left = "0px";
+    }
+
+    function moveRight() {
+      clearTimeout(animate); // avoid speeding up on double click
+      imgObj.style.left = parseInt(imgObj.style.left) + 1 + "px";
+      animate = setTimeout(moveRight, 10); // call moveRight again in 10ms
+    }
+
+    function stop() {
+      clearTimeout(animate);
+      imgObj.style.left = "0px";
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 6.3 - Change Font Size</title>
+</head>
+<body>
+  <h1>Change font size!</h1>
+  <p id="para1" onmouseover="incSize()" onmouseout="decSize()">
+    move cursor over me to zoom in...
+  </p>
+
+  <script>
+    function incSize() {
+      document.getElementById("para1").style.fontSize = "28px";
+    }
+
+    function decSize() {
+      document.getElementById("para1").style.fontSize = "16px";
+    }
+  </script>
+</body>
+</html>
